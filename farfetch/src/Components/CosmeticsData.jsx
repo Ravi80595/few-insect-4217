@@ -24,7 +24,7 @@ const CosmeticsData = () => {
 const ContainerWraper = styled.div`
   display:grid;
   margin-top:50px;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
 
 `;
 

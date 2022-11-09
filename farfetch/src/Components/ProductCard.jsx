@@ -9,20 +9,30 @@ const ProductCard = ({item}) => {
 
   return (
     <ProductCardWrapper>
-        <Image src={item.image} width={200}></Image>
+      <div>
+
+      <Image src={item.image} width={300} height={300}></Image>
+      </div>
          <Heading as='h2' fontSize='lg' >{item.title}</Heading>
         <Text>{item.category}</Text>
         <Text>{item.price}</Text>
         <Link to={`/data/${item.id}`}>
-        <Button>More Details</Button>
+        <Button marginBottom='-5px'>More Details</Button>
         </Link>
     </ProductCardWrapper>
   )
 }
 
 const ProductCardWrapper = styled.div`
-//   border:2px solid blue;
+  border:2px solid blue;
   width:200px;
+  margin:10px;
+  border: 2px solid blue;
+  width: 289px;
+  margin: 10px;
+  height: 475px;
+  text-align: center;
+  line-height: 30px;
 `;
 
 
