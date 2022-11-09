@@ -56,7 +56,7 @@ const Country = (props) => {
           <ModalBody>
           <Box >
                 {countries.map((ele)=>(
-                    <Flex _hover={{cursor:"pointer"}} onClick={()=>handleClick(ele.flag,ele.name)} mt="15px" alignItems="center" justifyContent="space-between">
+                    <Flex key={ele.name} _hover={{cursor:"pointer"}} onClick={()=>handleClick(ele.flag,ele.name)} mt="15px" alignItems="center" justifyContent="space-between">
                         <Flex gap="25px" >
                             <Avatar size="sm" src={ele.flag}/>
                             <Text>{ele.name}</Text>
