@@ -1,0 +1,29 @@
+import {Image,Heading,Text,Button,Box } from '@chakra-ui/react'
+import React from 'react'
+// import { useLocation, useSearchParams } from 'react-router-dom'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import "../Utils/ShopStructure.css"
+
+const ProductCard = ({item}) => {
+
+  return (
+    <ProductCardWrapper>
+        <Image src={item.image} width={200}></Image>
+         <Heading as='h2' fontSize='lg' >{item.title}</Heading>
+        <Text>{item.category}</Text>
+        <Text>{item.price}</Text>
+        <Link to={`/data/${item.id}`}>
+        <Button>More Details</Button>
+        </Link>
+    </ProductCardWrapper>
+  )
+}
+
+const ProductCardWrapper = styled.div`
+//   border:2px solid blue;
+  width:200px;
+`;
+
+
+export default ProductCard

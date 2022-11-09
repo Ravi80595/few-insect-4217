@@ -5,7 +5,7 @@ import { BsBag } from "react-icons/bs";
 import { CiUser } from "react-icons/ci";
 import {Box, Link,Text,Flex,Input} from "@chakra-ui/react"
 import { useEffect } from 'react';
-import { getCountries } from '../../redux/action';
+import { getCountries } from '../../redux/SearchReducer/action';
 import Country from './Country';
 import {Search2Icon} from "@chakra-ui/icons"
 import Gifts from './Gifts';
@@ -13,7 +13,7 @@ import Gifts from './Gifts';
 const Navbar = () => {
 
     const dispatch=useDispatch()
-    const countries = useSelector((state)=>state.countries)
+    const countries = useSelector((store)=>store.SearchReducer.countries)
     
 
     useEffect(()=>{

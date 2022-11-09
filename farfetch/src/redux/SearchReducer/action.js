@@ -18,7 +18,7 @@ const getCountries=(dispatch)=>{
 
     const getSingleCoun=(name)=>(dispatch)=>{
         dispatch(({type:types.GET_COUNTRY_REQUEST}))
-        axios.get(`https://restcountries.com/v3.1/name/${name}`)
+       axios.get(`https://restcountries.com/v3.1/name/${name}`)
             .then((res)=>{
                 dispatch(({
                     type:types.SINGLE_COUNTRY_SUCCESS,
