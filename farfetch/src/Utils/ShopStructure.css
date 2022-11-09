@@ -1,0 +1,25 @@
+.Filter_Selectr{
+    padding: 10px;
+    /* margin: auto; */
+    /* width: 50%; */
+}
+
+#addToBag{
+    width: 20rem;
+    height: 3rem;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #0e0ead;
+    color: white;
+    border-right: none;
+}
+#shipbutton{
+    font-size: 25px;
+    width: 30rem;
+    display: block;
+    margin-top: 20px;
+    height: 3rem;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid black;
+}
