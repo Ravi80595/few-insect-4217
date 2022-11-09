@@ -4,11 +4,13 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    Button
+    Grid,
+    GridItem,
+    Image,
   } from '@chakra-ui/react'
 
 const Gifts = (props) => {
-    const {name}=props
+    const {name,img}=props
 
 
   return (
@@ -18,11 +20,36 @@ const Gifts = (props) => {
                 {name}
             </MenuButton>
             <MenuList >
-                <MenuItem>Download</MenuItem>
-                <MenuItem>Create a Copy</MenuItem>
-                <MenuItem>Mark as Draft</MenuItem>
-                <MenuItem>Delete</MenuItem>
-                <MenuItem>Attend a Workshop</MenuItem>
+                <Grid templateColumns='repeat(4, 1fr)'>
+                        <GridItem>
+                                <MenuItem>Download</MenuItem>
+                                <MenuItem>Create a Copy</MenuItem>
+                                <MenuItem>Mark as Draft</MenuItem>
+                                <MenuItem>Delete</MenuItem>
+                                <MenuItem>Attend a Workshop</MenuItem>
+                        </GridItem> 
+                        <GridItem>
+                                <MenuItem>Download</MenuItem>
+                                <MenuItem>Create a Copy</MenuItem>
+                                <MenuItem>Mark as Draft</MenuItem>
+                                <MenuItem>Delete</MenuItem>
+                                <MenuItem>Attend a Workshop</MenuItem>
+                        </GridItem> 
+                        <GridItem>
+                                <MenuItem>Download</MenuItem>
+                                <MenuItem>Create a Copy</MenuItem>
+                                <MenuItem>Mark as Draft</MenuItem>
+                                <MenuItem>Delete</MenuItem>
+                                <MenuItem>Attend a Workshop</MenuItem>
+                        </GridItem> 
+                        <GridItem>
+                                <Image w="250px" src={img}/>
+                                <MenuItem>Create a Copy</MenuItem>
+                                <MenuItem>Mark as Draft</MenuItem>
+                                <MenuItem>Delete</MenuItem>
+                                <MenuItem>Attend a Workshop</MenuItem>
+                        </GridItem> 
+                </Grid>
             </MenuList>
         </Menu>
     </>

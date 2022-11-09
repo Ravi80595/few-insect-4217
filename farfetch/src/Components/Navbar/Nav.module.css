@@ -1,4 +1,24 @@
+.mainDiv{
+    border:1px solid red;
+    z-index: 999;
+}
+
 .logo{
     width: 25px;
     height: 25px;
+}
+
+.mobileDiv{
+    display: none;
+}
+
+@media all and (min-width: 250px) and (max-width: 1040px){
+    .mainDiv{
+        display: none;
+    }
+
+    .mobileDiv{
+        display: block;
+    }
+
 }
