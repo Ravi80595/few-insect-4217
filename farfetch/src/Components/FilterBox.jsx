@@ -4,7 +4,7 @@ import { Checkbox, Input,CheckboxGroup,Container,Box,Stack,Text,Flex } from '@ch
 import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import { BiDownArrowAlt } from "react-icons/bi";
- 
+
 
 
 const FilterBox = (props) => {

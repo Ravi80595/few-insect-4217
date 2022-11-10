@@ -19,6 +19,7 @@ useEffect(()=>{
       <Flex>
         {/* <Box width='20%'> */}
         <FilterWrapper>
+        <h2> <b> Filters ></b></h2>
             {/* <Heading as="h2" size="md" mb='50px'>Filters</Heading>
             <Box>
                 <Container className='Filter_Selectr'><Select>
@@ -47,6 +48,8 @@ const FilterWrapper = styled.div`
   width: 20%;
   height: 600px;
   margin-top:120px;  
+  // margin=left:10px;
+  margin-left: 20px;
   position:fixed; 
 `;
 

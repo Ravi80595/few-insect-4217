@@ -1,22 +1,23 @@
 import React from 'react'
-import {Box,TableContainer,Table,Thead,Tr,Th,Tbody,Td,Tfoot,Center,Button,AlertDialog,AlertDialogOverlay,AlertDialogContent,AlertDialogHeader,AlertDialogBody,AlertDialogFooter} from '@chakra-ui/react'
+import {Box,TableContainer,Table,Thead,Tr,Th,Tbody,Td,Tfoot,Center,Button,AlertDialog,AlertDialogOverlay,AlertDialogContent,AlertDialogHeader,AlertDialogBody,AlertDialogFooter,Container} from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useDisclosure } from '@chakra-ui/react'
 import { checkoutCart } from '../redux/CartReducer/action'
 import { removeToCart } from '../redux/CartReducer/action'
+import { Link } from 'react-router-dom'
 
 const CartPage = () => {
-  const CartData=JSON.parse(localStorage.getItem("CartData")) || []
-  console.log(CartData)
+  const CartData=JSON.parse(localStorage.getItem("CartData")) 
   
-  const dispatch=useDispatch()
-  const {isOpen,onOpen,onClose}=useDisclosure()
-  const cancelRef=React.useRef()
+  // const dispatch=useDispatch()
+  // const {isOpen,onOpen,onClose}=useDisclosure()
+  // const cancelRef=React.useRef()
 
 
-  const handleCheckout=()=>{
-    dispatch(checkoutCart())
-    onClose()
+  const removeToCart=(index)=>{
+    console.log(index)
+   const Data1=CartData.splice(index,1)
+    localStorage.setItem('CartData',JSON.stringify(Data1))  
   }
 
   return (
@@ -37,16 +38,15 @@ const CartPage = () => {
           <Tbody>
             
             {
-              CartData.map((Item)=>(
+              CartData.map((Item,index)=>(
               <Tr key={Item.id}>
                 <Td fontSize={{base:"xs",md:"md"}}>{Item.title}</Td>
                 <Td fontSize={{base:"xs",md:"md"}}>{Item.price}</Td>
                 <Td fontSize={{base:"xs",md:"md"}}>
-                  <Button onClick={()=> dispatch(removeToCart(Item.id))} >Remove</Button>
+                  <Button onClick={()=>removeToCart(Item.id,index)} >Remove</Button>
                 </Td>
               </Tr>
             ))}
-            {/* </div> */}
           </Tbody>
           <Tfoot>
             <Tr>
@@ -58,32 +58,11 @@ const CartPage = () => {
           </Tfoot>
         </Table>
       </TableContainer>
-      <Center mt={{base:4,md:8}}>
-        <Button onClick={onOpen}>Place order</Button>
-        <AlertDialog 
-        isOpen={isOpen}
-        leastDestructiveRef={cancelRef}
-        onClose={onClose}
-        >
-          <AlertDialogOverlay>
-            <AlertDialogContent>
-              <AlertDialogHeader fontSize='lg'>
-                Place Order
-              </AlertDialogHeader>
-
-              <AlertDialogBody>
-                Are you sure your want to place order
-              </AlertDialogBody>
-
-              <AlertDialogFooter>
-                <Button ref={cancelRef} onClick={onClose}>Cancel</Button>
-                <Button onClick={handleCheckout}>Yes</Button>
-              </AlertDialogFooter>
-
-            </AlertDialogContent>
-          </AlertDialogOverlay>
-        </AlertDialog>
-      </Center>
+      <Container>
+        <Link to="/payment">
+        <Button>Checkout</Button>
+        </Link>
+      </Container>
     </Box>
   )
 }
