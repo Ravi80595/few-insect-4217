@@ -2,10 +2,9 @@ import styles from "./Nav.module.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BsBag } from "react-icons/bs";
-import { CiUser } from "react-icons/ci";
 import {Box, Link,Text,Flex,Input} from "@chakra-ui/react"
 import { useEffect } from 'react';
-import { getCountries } from '../../redux/action';
+import { getCountries } from '../../redux/SearchReducer/action';
 import Country from './Country';
 import {Search2Icon} from "@chakra-ui/icons"
 import Gifts from './Gifts';
@@ -24,7 +23,7 @@ import Login from "../Login/Login";
 
 const Navbar = () => {
     const dispatch=useDispatch()
-    const countries = useSelector((state)=>state.countries)
+    const countries = useSelector((state)=>state.SearchReducer.countries)
     
 
     useEffect(()=>{

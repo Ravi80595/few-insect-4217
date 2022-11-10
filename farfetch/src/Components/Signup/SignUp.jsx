@@ -10,18 +10,45 @@ import {
     Link,
     Text,
   } from '@chakra-ui/react'
-  import {ViewIcon,ViewOffIcon} from "@chakra-ui/icons"
+import {ViewIcon,ViewOffIcon} from "@chakra-ui/icons"
+// import { onAuthStateChanged } from "firebase/auth";
+// import {auth} from "../../firebase-config"
+import { useDispatch, useSelector } from 'react-redux'
+import { signAuth } from '../../redux/Auth/action';
 
 const SignUp = () => {
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
+    const [email,setEmail]=React.useState("");
+    const [pass,setPass]=React.useState("");
+    const [name,setName]=React.useState("");
+    const dispatch=useDispatch()
+
+    // const sign = useSelector((store)=>store.Auth.SignUp)
+
+    // console.log(sign)
+
+    // onAuthStateChanged(auth,(currentUser)=>{
+    //     setUser(true)
+    // })
+
+    const data = useSelector((store)=>store.Auth.SignUp)
+
+      
+    const register=()=>{
+        dispatch(signAuth(email,pass))
+            setEmail("");
+            setPass("");
+            setName("")
+    }
+  
   return (
     <>
         <TabPanel>
             <label>Name </label>
-            <Input placeholder='Enter name'  mb="10px" mt="5px"/>
+            <Input placeholder='Enter name'  mb="10px" mt="5px" value={name} onChange={(e)=>setName(e.target.value)}/>
             <label>Email address</label>
-            <Input placeholder='Enter email'  mb="10px" mt="5px"/>
+            <Input placeholder='Enter email'  mb="10px" mt="5px" value={email} onChange={(e)=>setEmail(e.target.value)}/>
             <label>Password</label>
             <InputGroup mt="5px" size='md'>
                 <Input
@@ -29,6 +56,8 @@ const SignUp = () => {
                 pr='4.5rem'
                 type={show ? 'text' : 'password'}
                 placeholder='Enter password'
+                value={pass}
+                onChange={(e)=>setPass(e.target.value)}
                 />
             <InputRightElement width='4.5rem'>
                 <Button h='1.75rem' size='sm' onClick={handleClick}>
@@ -41,7 +70,7 @@ const SignUp = () => {
                     <Checkbox mb="35px" defaultChecked></Checkbox>
                     <Text fontSize="14px">Sign up for promotions, tailored new arrivals, stock updates and more. Unsubscribe at the bottom of our emails.<Link>Find out more</Link></Text>
                 </Flex>
-                <Button _hover={{bg:"rgb(65, 63, 63)"}} bg="black" color="white" mt="15px" w="100%">Register</Button>
+                <Button onClick={register} _hover={{bg:"rgb(65, 63, 63)"}} bg="black" color="white" mt="15px" w="100%">Register</Button>
                 <Text textAlign="center" mt="10px" fontWeight="bold" >OR</Text>
                 <Button mt="15px" bg="white" border="1px solid black"  w="100%">Continue With Google</Button>
                 <Button mt="15px" bg="white" border="1px solid black"  w="100%">Continue With Apple</Button>

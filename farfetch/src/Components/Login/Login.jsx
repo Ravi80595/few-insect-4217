@@ -26,17 +26,54 @@ import {
 import { CiUser } from "react-icons/ci";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import SignUp from "../Signup/SignUp";
+import { useDispatch, useSelector } from 'react-redux'
+import { LoginAuth } from "../../redux/Auth/action";
+import { onAuthStateChanged, signOut, } from "firebase/auth";
+import {auth} from "../../firebase-config"
+import { useEffect } from "react";
+
 
 const Login = () => {
+  const [authentication,setAuthentication]=React.useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
+  const [email,setEmail]=React.useState("");
+  const [pass,setPass]=React.useState("");
+  const [userIcon,setuserIcon]=React.useState(true);
+
+  const dispatch=useDispatch()
+
+    const isError = useSelector((state)=>state.Auth.isLError)
+
+    console.log(isError)
+
+    useEffect(()=>{
+        onAuthStateChanged(auth,(currentUser)=>{
+            setAuthentication(true)
+            setuserIcon(false)
+        })
+    },[])
+
+    const register=()=>{
+        dispatch(LoginAuth(email,pass))
+            setEmail("");
+            setPass("");
+    }
+
+    const handleLogOut= async ()=>{
+        await signOut(auth)
+        setuserIcon(true)
+        setAuthentication(false)
+    }
 
   return (
     <Box w="35x">
-      <Button _hover={{ bg: "white" }} onClick={onOpen} bg="white">
+      {authentication && <Button _hover={{ bg: "white" }} onClick={handleLogOut} bg="white">Logout</Button>}
+
+      {userIcon && <Button _hover={{ bg: "white" }} onClick={onOpen} bg="white">
         <CiUser className={styles.logo} />
-      </Button>
+      </Button>}
 
       <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside">
         <ModalOverlay />
@@ -53,7 +90,7 @@ const Login = () => {
               <TabPanels>
                 <TabPanel>
                   <label>Email address</label>
-                  <Input placeholder="Enter email" mb="10px" mt="5px" />
+                  <Input placeholder="Enter email" mb="10px" mt="5px" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                   <label>Password</label>
                   <InputGroup mt="5px" size="md">
                     <Input
@@ -61,6 +98,8 @@ const Login = () => {
                       pr="4.5rem"
                       type={show ? "text" : "password"}
                       placeholder="Enter password"
+                      value={pass}
+                      onChange={(e)=>setPass(e.target.value)}
                     />
                     <InputRightElement width="4.5rem">
                       <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -82,6 +121,7 @@ const Login = () => {
                     bg="black"
                     color="white"
                     w="100%"
+                    onClick={register}
                   >
                     Sign In
                   </Button>

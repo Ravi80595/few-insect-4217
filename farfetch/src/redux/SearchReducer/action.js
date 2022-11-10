@@ -15,6 +15,7 @@ const getCountries=(dispatch)=>{
             dispatch(({type:types.GET_COUNTRY_FAILURE}))
         })
     }
+    
 
     const getSingleCoun=(name)=>(dispatch)=>{
         dispatch(({type:types.GET_COUNTRY_REQUEST}))
@@ -30,5 +31,5 @@ const getCountries=(dispatch)=>{
                 dispatch(({type:types.GET_COUNTRY_FAILURE}))
             })
         }
-
+        
 export {getCountries,getSingleCoun}
