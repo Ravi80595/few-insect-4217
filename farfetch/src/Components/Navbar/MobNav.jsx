@@ -19,16 +19,18 @@ import {
 import mobLogo from "../../assets/mobLogo.jpeg"
 import { BsBag } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
+import Login from "../Login/Login";
+import MobLogin from "../Login/MobLogin";
 
 const MobNav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Flex justifyContent="space-between" alignItems="center">
-      <Button p="8px" color="black" bg="white" onClick={onOpen}>
+    <Flex justifyContent="space-between" alignItems="center" >
+      <Button p="8px" color="black" bg="white" onClick={onOpen} >
         <HamburgerIcon  w="30px" h="30px" />
       </Button>
-      <Drawer placement="left" onClose={onClose} isOpen={isOpen} scrollBehavior="inside">
+      <Drawer placement="left" onClose={onClose} isOpen={isOpen}  size="full">
         <DrawerOverlay />
         <DrawerContent>
             <DrawerCloseButton/>
@@ -41,7 +43,7 @@ const MobNav = () => {
             </TabList>
             </Tabs>
           <DrawerBody>
-            <Flex mt="5px" gap="10px" direction="column" >
+            <Flex mt="5px" gap="20px" direction="column" >
                 <Text>Gifts</Text>
                 <Text>New In</Text>
                 <Text>Brands</Text>
@@ -55,8 +57,8 @@ const MobNav = () => {
             </Flex>
             <Text mt="15px">MY ACCOUNT</Text>
             <Flex direction="column">
-                <Button mt="10px" bg="white" border="1px solid black">Sign In</Button>
-                <Button mt="10px" bg="white" border="1px solid black">Register</Button>
+                <MobLogin name="Sign In" />
+                <MobLogin name="Register" />
             </Flex>
           </DrawerBody>
         </DrawerContent>

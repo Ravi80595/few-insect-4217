@@ -20,10 +20,13 @@ import heroImg8 from "../../assets/heroImg8.jpg"
 import heroImg9 from "../../assets/heroImg9.jpg"
 import heroImg10 from "../../assets/heroImg10.jpg"
 import MobNav from "./MobNav";
+
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+import Login from "../Login/Login";
 
+
+const Navbar = () => {
     const dispatch=useDispatch()
     const countries = useSelector((store)=>store.SearchReducer.countries)
     
@@ -47,9 +50,14 @@ const Navbar = () => {
 
                  <Flex alignItems="center" mr="60px" gap="15px">
                     <Country countries={countries}/>
+
                     <CiUser className={styles.logo} />
                     <IoIosHeartEmpty className={styles.logo} />
                     <Link to='/cartPage'>
+
+                    <Login />
+                    <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
+
                     <BsBag className={styles.logo}/>
                     </Link>
                  </Flex>
