@@ -64,7 +64,7 @@ const Login = () => {
                     />
                     <InputRightElement width="4.5rem">
                       <Button h="1.75rem" size="sm" onClick={handleClick}>
-                        {show ? <ViewOffIcon /> : <ViewIcon />}
+                        {/* {show ? <ViewOffIcon /> : <ViewIcon />} */}
                       </Button>
                     </InputRightElement>
                   </InputGroup>
