@@ -1,9 +1,11 @@
 import React from 'react'
-import { Flex, Spacer,Box,Text,Button,Image, Heading,Badge,Icon } from '@chakra-ui/react'
+import { Flex, Spacer,Box,Text,Button,Image, Heading,Badge,Icon, VStack } from '@chakra-ui/react'
 import Boutiques from './Boutiques'
 import CategoryGift from './CategoryGift'
 import BrandCate from './BrandCate'
 import HelpContent from './HelpContent'
+import {Link} from "react-router-dom"
+import HomeInput from './HomeInput'
 
 const HomePage = () => {
    
@@ -11,31 +13,35 @@ const HomePage = () => {
   return (
     // <div>HomePage</div>
     <>
-    
-    <Flex color='black' w='90%' ml='20' mt='10' >
-        <Box w='50%'   >
+     <Link to = "/cartPage">
+        
+    <Flex color='black' w='90%' ml='20' mt='10'  >
+        
+        <Box w='50%'  >
         <Image boxSize='600px' src='https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4017102/data/b271794d1e368cacbb73b7fdd1fb3251/1x1_messaging-side/637/data.jpeg' alt='Dan Abramov' w='100%'  />
         </Box>
     
-        <Box w='50%' h='600px'   >
-            <Text fontSize='6xl'pt='20'>22% OFF YOUR <br/> NEW WARDROBE</Text>
+        <Box w='50%' h='600px'  align='center'  >
+            <Text fontSize='6xl'pt='10'lineHeight='1.2' fontWeight='bold'>22% OFF YOUR <br/> NEW WARDROBE</Text>
             <br />
-            <Text fontSize='lg' >For a limited time only, you can shop the world's most <br/>
+            <Text fontSize='lg'  >For a limited time only, you can shop the world's most <br/>
             iconic brands with 22% off.Offer available on selected <br/>
             full-price items</Text>
             <br/>
+           
             <Button colorScheme='teal' variant='outline'>
                 Shop Now
-            </Button>    
+            </Button>   
         
         </Box>
-    </Flex>
+        
+    </Flex></Link> 
 
     <Flex color='black' w='90%' ml='20' mt='10' >
        
     
-        <Box w='50%' h='600px'   >
-            <Text fontSize='6xl'pt='20'>Party hearder: amped-up looks for every <br/>occasion</Text>
+        <Box w='50%' h='600px' align='center'   >
+            <Text fontSize='6xl'pt='20' lineHeight='1'>Party hearder: amped-up looks for every <br/>occasion</Text>
             <br />
             <Text fontSize='lg' >Time to throw out the partywear rule book: introducing high-impact knits,<br/>
             offbeat separates and unexpected suiting for the the freshest take on event<br/>dressing</Text>
@@ -89,8 +95,8 @@ const HomePage = () => {
     <Flex color='black' w='90%' ml='20' mt='40' >
        
     
-       <Box w='50%' h='600px'   >
-           <Text fontSize='6xl'pt='20'>THE TRIPLE<br/> STITCH SNEAKER</Text>
+       <Box w='50%' h='600px'  align='center' >
+           <Text fontSize='6xl'pt='20'lineHeight={1}>THE TRIPLE<br/> STITCH SNEAKER</Text>
            <br />
            <Text fontSize='lg' >Shop Zegna</Text>
            <br/>
@@ -102,7 +108,7 @@ const HomePage = () => {
        <Image boxSize='600px' src='https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/3954094/data/38be8fc7e035a1d343e9472e3b4f5836/3x4_messaging-side/936/data.jpeg'  />
        </Box>
    </Flex>
-   <Text fontSize='3xl'pt='20'>Shop gifts by category</Text>
+   <Text fontSize='3xl'pt='20'align={'center'}>Shop gifts by category</Text>
    <Flex  w='90%' ml='20' mt='10' mb='20' >
   
         <CategoryGift />
@@ -121,7 +127,7 @@ const HomePage = () => {
 
     </Flex>
 
-    <Text fontSize='6xl'pt='20'>Shop gifts by category</Text>
+    {/* <Text fontSize='6xl'pt='20'>Shop gifts by category</Text> */}
     
     <Flex  w='90%' ml='20' mt='10' >
         
@@ -131,9 +137,9 @@ const HomePage = () => {
     </Flex>
    
 
-    <Flex  w='90%' ml='20' mt='10' >
-        <Box p='4' align='center'>
-        <Text fontSize='6xl'pt='20'  >Shop gifts by brands</Text>
+    <Flex  w='90%' ml='20' mt='10'  >
+        <Box p='4' w='100%'>
+        <Text fontSize='5xl'pt='20'  align='center' >Shop gifts by brands</Text>
         </Box>
         
 
@@ -150,6 +156,13 @@ const HomePage = () => {
     <Flex  w='90%' ml='20' mt='20' >
         
         <HelpContent/>
+
+       
+    </Flex>
+
+    <Flex  w='90%' ml='20' mt='20' >
+        
+        <HomeInput/>
 
        
     </Flex>

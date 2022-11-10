@@ -55,7 +55,7 @@ const Boutiques = () => {
          src={img}
          />
          <Text>{text1}</Text>
-         <Text>{text2}</Text>
+         <Text fontWeight={'bold'}>{text2}</Text>
          <Text>{text3}</Text>
          <Text>{price}</Text>
          </Box>
