@@ -20,9 +20,9 @@ import heroImg8 from "../../assets/heroImg8.jpg"
 import heroImg9 from "../../assets/heroImg9.jpg"
 import heroImg10 from "../../assets/heroImg10.jpg"
 import MobNav from "./MobNav";
+import Login from "../Login/Login";
 
 const Navbar = () => {
-
     const dispatch=useDispatch()
     const countries = useSelector((state)=>state.countries)
     
@@ -47,8 +47,8 @@ const Navbar = () => {
 
                  <Flex alignItems="center" mr="60px" gap="15px">
                     <Country countries={countries}/>
-                    <CiUser className={styles.logo} />
-                    <IoIosHeartEmpty className={styles.logo} />
+                    <Login />
+                    <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
                     <BsBag className={styles.logo}/>
                  </Flex>
             </Flex>
