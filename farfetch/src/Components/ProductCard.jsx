@@ -1,6 +1,5 @@
 import {Image,Heading,Text,Button,Box } from '@chakra-ui/react'
 import React from 'react'
-// import { useLocation, useSearchParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import "../Utils/ShopStructure.css"

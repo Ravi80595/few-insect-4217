@@ -31,6 +31,8 @@ const Navbar = () => {
         dispatch(getCountries)
     },[])
 
+    const cartCount=JSON.parse(localStorage.getItem("CartData")) 
+
   return (
     <>
         <div className={styles.mainDiv}>
@@ -51,6 +53,7 @@ const Navbar = () => {
                     <IoIosHeartEmpty className={styles.logo} />
                     <Link to='/cartPage'>
                     <BsBag className={styles.logo}/>
+                    {/* {cartCount.length} */}
                     </Link>
                  </Flex>
             </Flex>

@@ -121,7 +121,7 @@ const BrandWrapper=styled.div`
 // border-bottom: 2px solid black;
 font-size:18px;
 // text-align:center;
-margin:10px;
+margin:20px;
 margin-left:10px;
 width:80%;
 `

@@ -1,5 +1,5 @@
-// import { Container } from '@chakra-ui/react'
 import React from 'react'
+import "../Utils/ShopStructure.css"
 import { useSelector } from 'react-redux'
 import ProductCard from './ProductCard'
 import styled from 'styled-components'
@@ -9,7 +9,7 @@ const CosmeticsData = () => {
     const data=useSelector((store)=>store.AppReducer.products)
     console.log(data)
   return (
-    <ContainerWraper>
+    <div className='DataCard'>
       {
         data.map(item=>{
           return(
@@ -17,7 +17,7 @@ const CosmeticsData = () => {
           )
       })
      }
-    </ContainerWraper>
+    </div>
   )
 }
 

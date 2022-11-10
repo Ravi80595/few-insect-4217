@@ -32,17 +32,10 @@ const SingleProductPage = () => {
       
 let data=[]
 
-// const addToCart=(productDetail)=>{
-//   data.push(productDetail)
-//   // localStorage.setItem('CartData',JSON.stringify(data))
-//   // navigate("/cartPage")
-//   console.log(data)
-//   }
-
 
   return (
     <BoxWrapper>
-        <Flex gap={100}>
+        <div className='SinglePageFlex'>
             <ImageWrapper>
                 <Image src={productDetail.image} height='100%' alt="no image" />
             </ImageWrapper>
@@ -51,6 +44,7 @@ let data=[]
                  <Heading as='h2' size='lg'>{`${productDetail.title}`}</Heading>
                   <Text>{`Category: ${productDetail.category}`}</Text>
                   <Text>{`Price: $${productDetail.price}`}</Text> 
+                  <Text>Import Duties Included*</Text>
                 </DescWrapper>
                 <Link to={'/cartpage'}>
                   <Button id='addToBag' onClick={()=>dispatch(addToCart(productDetail))}> Add To Bag</Button>
@@ -61,7 +55,7 @@ let data=[]
                     <Text fontSize='xl'> {days}</Text>
                   </Container>
             </Box>
-        </Flex>
+        </div>
         </BoxWrapper>
   )
 }
@@ -78,7 +72,8 @@ const ImageWrapper= styled.div`
 //   border:2px solid blue;
   padding:20px;
   height:500px;
-  width:45%;
+  width:80%;
+  margin:auto;
   text-align:center;
 `;
 

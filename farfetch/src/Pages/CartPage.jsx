@@ -63,6 +63,7 @@ const CartPage = () => {
         <Button>Checkout</Button>
         </Link>
       </Container>
+      
     </Box>
   )
 }
