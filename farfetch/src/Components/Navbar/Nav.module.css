@@ -1,12 +1,16 @@
 .mainDiv{
-    border:1px solid red;
+    position: sticky;
     z-index: 999;
+    background: white;
+    top: 0;
+    padding-bottom: 10px;
 }
 
 .logo{
     width: 25px;
     height: 25px;
 }
+
 
 .mobileDiv{
     display: none;

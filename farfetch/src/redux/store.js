@@ -4,8 +4,9 @@ import thunk from 'redux-thunk'
 import {reducer as AppReducer} from './AppReducer/reducer'
 // import {reducer as CartReducer} from "./CartReducer/reducer"
 import {reducer as SearchReducer} from "./SearchReducer/reducer"
+import {reducer as Auth} from "./Auth/reducer"
 
-const rootReducer = combineReducers({AppReducer,SearchReducer})
+const rootReducer = combineReducers({AppReducer,SearchReducer,Auth})
 
 const composeEnhancers=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 

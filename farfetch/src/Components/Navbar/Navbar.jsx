@@ -2,8 +2,7 @@ import styles from "./Nav.module.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BsBag } from "react-icons/bs";
-import { CiUser } from "react-icons/ci";
-import {Box,Text,Flex,Input} from "@chakra-ui/react"
+import {Box, Link,Text,Flex,Input} from "@chakra-ui/react"
 import { useEffect } from 'react';
 import { getCountries } from '../../redux/SearchReducer/action';
 import Country from './Country';
@@ -20,13 +19,13 @@ import heroImg8 from "../../assets/heroImg8.jpg"
 import heroImg9 from "../../assets/heroImg9.jpg"
 import heroImg10 from "../../assets/heroImg10.jpg"
 import MobNav from "./MobNav";
-import { Link } from "react-router-dom";
+import Login from "../Login/Login";
 
 const Navbar = () => {
-
     const dispatch=useDispatch()
-    const countries = useSelector((store)=>store.SearchReducer.countries)
+    const countries = useSelector((state)=>state.SearchReducer.countries)
     
+
     useEffect(()=>{
         dispatch(getCountries)
     },[])
@@ -36,8 +35,8 @@ const Navbar = () => {
         <div className={styles.mainDiv}>
             <Flex justifyContent="space-between" alignItems="center" >
                 <Flex ml="50px" gap="20px" >
-                    <Link to='/menpage' _hover={{outline:"none"}}>Women</Link>
-                    <Link to='/' _hover={{outline:"none"}}>Men</Link>
+                    <Link _hover={{outline:"none"}}>Women</Link>
+                    <Link _hover={{outline:"none"}}>Men</Link>
                     <Link _hover={{outline:"none"}}>Kids</Link>
                 </Flex>
 
@@ -47,11 +46,9 @@ const Navbar = () => {
 
                  <Flex alignItems="center" mr="60px" gap="15px">
                     <Country countries={countries}/>
-                    <CiUser className={styles.logo} />
-                    <IoIosHeartEmpty className={styles.logo} />
-                    <Link to='/cartPage'>
+                    <Login />
+                    <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
                     <BsBag className={styles.logo}/>
-                    </Link>
                  </Flex>
             </Flex>
 
