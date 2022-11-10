@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { getData } from '../redux/AppReducer/action'
 import CosmeticsData from './CosmeticsData'
+import FilterSort from './FilterSort'
 
 const ShopStructure = () => {
   const dispatch=useDispatch()
@@ -18,7 +19,7 @@ useEffect(()=>{
       <Flex>
         {/* <Box width='20%'> */}
         <FilterWrapper>
-            <Heading as="h2" size="md" mb='50px'>Filters</Heading>
+            {/* <Heading as="h2" size="md" mb='50px'>Filters</Heading>
             <Box>
                 <Container className='Filter_Selectr'><Select>
                     <option value="">Category</option>
@@ -31,7 +32,8 @@ useEffect(()=>{
                 <Container className='Filter_Selectr'><Select></Select></Container>
                 <Container className='Filter_Selectr'><Select></Select></Container>
                 <Container className='Filter_Selectr'><Select></Select></Container>
-            </Box>
+            </Box> */}
+            <FilterSort/>
         </FilterWrapper>
         <ProductsWrapper>
             <CosmeticsData />

@@ -14,7 +14,6 @@ const SingleProductPage = () => {
     const [days,setDays]=useState('')
     const [productDetail,setProductDetail]=useState("")
     const datas=useSelector(store=>store.AppReducer.products)
-    // console.log(productDetail)
 
     useEffect(()=>{
         if(id){
@@ -24,13 +23,22 @@ const SingleProductPage = () => {
       },[])
     useEffect(()=>{
         const date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    let currentDates = `${day+4}-${month}-${year}`;
-     setDays(currentDates); 
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let currentDates = `${day+4}-${month}-${year}`;
+        setDays(currentDates); 
     },[])
       
+let data=[]
+
+// const addToCart=(productDetail)=>{
+//   data.push(productDetail)
+//   // localStorage.setItem('CartData',JSON.stringify(data))
+//   // navigate("/cartPage")
+//   console.log(data)
+//   }
+
 
   return (
     <BoxWrapper>
@@ -59,7 +67,7 @@ const SingleProductPage = () => {
 }
 
 const BoxWrapper=styled.div`
-margin-top:50px;
+// margin-top:50px;
 gap:20%;
 padding:50px;
 // border:2px solid green;

@@ -6,8 +6,9 @@ import { checkoutCart } from '../redux/CartReducer/action'
 import { removeToCart } from '../redux/CartReducer/action'
 
 const CartPage = () => {
-  const CartData=useSelector((store)=>store.CartReducer.Cartitem)
+  const CartData=JSON.parse(localStorage.getItem("CartData")) || []
   console.log(CartData)
+  
   const dispatch=useDispatch()
   const {isOpen,onOpen,onClose}=useDisclosure()
   const cancelRef=React.useRef()
@@ -34,8 +35,9 @@ const CartPage = () => {
             </Tr>
           </Thead>
           <Tbody>
-            <div>
-            {CartData.map((Item)=>(
+            
+            {
+              CartData.map((Item)=>(
               <Tr key={Item.id}>
                 <Td fontSize={{base:"xs",md:"md"}}>{Item.title}</Td>
                 <Td fontSize={{base:"xs",md:"md"}}>{Item.price}</Td>
@@ -44,7 +46,7 @@ const CartPage = () => {
                 </Td>
               </Tr>
             ))}
-            </div>
+            {/* </div> */}
           </Tbody>
           <Tfoot>
             <Tr>

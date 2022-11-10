@@ -1,21 +1,26 @@
 import * as types from "./actionType"
+// import { useNavigate } from "react-router-dom"
 
-const addToCart=(payload)=>{
-    return{
-        type:types.ADD_TO_CART,
-        payload
-    }
-}
-const removeToCart=(payload)=>{
+
+const removeToCart=()=>{
     return{
         type:types.REMOVE_TO_CART,
-        payload
+        
     }
 }
 const checkoutCart=()=>{
     return{
         type:types.CHECKOUT
     }
+}
+
+let data=[]
+
+const addToCart=(payload)=>{
+data.push(payload)
+localStorage.setItem('CartData',JSON.stringify(data))
+// navigate("/cartPage")
+console.log(data)
 }
 
 export {addToCart,removeToCart,checkoutCart}

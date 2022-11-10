@@ -5,6 +5,7 @@ const CartState={
 }
 
 export const reducer=(state=CartState,action)=>{
+    console.log(action)
     const {type,payload}=action
     switch(type){
         case types.ADD_TO_CART:{

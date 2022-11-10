@@ -24,10 +24,7 @@ const ProductCard = ({item}) => {
 }
 
 const ProductCardWrapper = styled.div`
-  border:2px solid blue;
   width:200px;
-  margin:10px;
-  border: 2px solid blue;
   width: 289px;
   margin: 10px;
   height: 475px;

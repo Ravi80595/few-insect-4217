@@ -4,14 +4,13 @@ import Boutiques from './Boutiques'
 import CategoryGift from './CategoryGift'
 import BrandCate from './BrandCate'
 import HelpContent from './HelpContent'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
    
         
   return (
-    // <div>HomePage</div>
     <>
-    
     <Flex color='black' w='90%' ml='20' mt='10' >
         <Box w='50%'   >
         <Image boxSize='600px' src='https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4017102/data/b271794d1e368cacbb73b7fdd1fb3251/1x1_messaging-side/637/data.jpeg' alt='Dan Abramov' w='100%'  />
@@ -24,9 +23,11 @@ const HomePage = () => {
             iconic brands with 22% off.Offer available on selected <br/>
             full-price items</Text>
             <br/>
+            <Link to="shop">
             <Button colorScheme='teal' variant='outline'>
                 Shop Now
             </Button>    
+            </Link>
         
         </Box>
     </Flex>
