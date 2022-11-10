@@ -2,6 +2,7 @@ import { Checkbox, Input,CheckboxGroup,Container,Box,Stack,Text } from '@chakra-
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import styled from 'styled-components';
+import FilterBox from './FilterBox';
 
 const FilterSort = () => {
   const [searchParams,setSearchParams]=useSearchParams();
@@ -14,7 +15,6 @@ const [box2,setBox2]=useState(false)
 const handleSort=(e)=>{
   setSortBy(e.target.value)
 }
-// console.log(sortBy)
 
 const tooglebrand=()=>{
     if(!height){
@@ -43,9 +43,6 @@ const handelfilter=(e)=>{
   }
   setCategory(newCategory)
 }
-// console.log(category)
-
-
 useEffect(()=>{
   const params={}
   category && (params.genre=category)
@@ -54,74 +51,84 @@ useEffect(()=>{
 },[category,setSearchParams,sortBy])
 
   return (
-    <div style={{width:'100%'}}>
+    
+    <div>
+      <FilterBox categorys={"Category"} value1={"Bags"} value2={'Footwear'} value3={'Homewere'}
+      value4={"Shoes"} value5={"Watches"}/>
+      <FilterBox categorys={"Brand"}/>
+      <FilterBox categorys={"Size"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Color"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Discount"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Price"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Conscious"} value1={"brand"} value2={''} value3={''}/>
+    </div>
+
+//     <div style={{width:'100%'}}>
+// <BrandWrapper>
+//     <Box onClick={tooglebrand}>Category</Box>
+//     { height && 
+//     <Box>
+//         <Container>
+//             <CheckboxGroup>
+//             <Stack spacing={[1, 2]} direction={['column', 'column']}>
+//             <Checkbox defaultChecked={category.includes('ravi')} 
+//             onChange={handelfilter}
+//             value='ravi'
+//             >K pop</Checkbox>
+//             <Checkbox isChecked={category.includes('K-Pop')} 
+//             onChange={handelfilter}
+//             >Ravi</Checkbox> 
+//             <Checkbox defaultChecked={category.includes("aman")}
+//             onChange={handelfilter}
+//             >Aman</Checkbox>   
+//             </Stack>
+//             </CheckboxGroup>    
+//         </Container>
+//     </Box>
+//     }
+//     </BrandWrapper>
+//     <BrandWrapper>
+//     <Box onClick={toogleBox2}> Brand</Box>
+//     { box2 && 
+//     <Box>
+//         <Container>
+//             <CheckboxGroup>
+//             <Stack spacing={[1, 2]} direction={['column', 'column']}>
+//             <Checkbox defaultChecked={category.includes('ravi')} 
+//             onChange={handelfilter}
+//             value='ravi'
+//             >K pop</Checkbox>
+//             <Checkbox isChecked={category.includes('K-Pop')} 
+//             onChange={handelfilter}
+//             >Ravi</Checkbox> 
+//             <Checkbox defaultChecked={category.includes("aman")}
+//             onChange={handelfilter}
+//             >Aman</Checkbox>   
+//             </Stack>
+//             </CheckboxGroup>    
+//         </Container>
+//     </Box>
+//     }
+//     </BrandWrapper>
+//     <h1>Sort</h1>
+//       <div onChange={handleSort}>
+//         <div>
+//           <input type="radio" value='asc' name='sortBy' 
+//           defaultChecked={sortBy==='asc'}
+//           />
+//           <label> Ascending</label>
+//         </div>
+//         <div>
+//           <input type="radio" value='desc' name='sortBy'
+//           defaultChecked={sortBy==='desc'} />
+//           <label> Descending</label>
+//         </div>
+//       </div> 
 
 
-<BrandWrapper>
-    <Box onClick={tooglebrand}>Category</Box>
-    { height && 
-    <Box>
-        <Container>
-            <CheckboxGroup>
-            <Stack spacing={[1, 2]} direction={['column', 'column']}>
-            <Checkbox defaultChecked={category.includes('ravi')} 
-            onChange={handelfilter}
-            value='ravi'
-            >K pop</Checkbox>
-            <Checkbox isChecked={category.includes('K-Pop')} 
-            onChange={handelfilter}
-            >Ravi</Checkbox> 
-            <Checkbox defaultChecked={category.includes("aman")}
-            onChange={handelfilter}
-            >Aman</Checkbox>   
-            </Stack>
-            </CheckboxGroup>    
-        </Container>
-    </Box>
-    }
-    </BrandWrapper>
-    <BrandWrapper>
-    <Box onClick={toogleBox2}> Brand</Box>
-    { box2 && 
-    <Box>
-        <Container>
-            <CheckboxGroup>
-            <Stack spacing={[1, 2]} direction={['column', 'column']}>
-            <Checkbox defaultChecked={category.includes('ravi')} 
-            onChange={handelfilter}
-            value='ravi'
-            >K pop</Checkbox>
-            <Checkbox isChecked={category.includes('K-Pop')} 
-            onChange={handelfilter}
-            >Ravi</Checkbox> 
-            <Checkbox defaultChecked={category.includes("aman")}
-            onChange={handelfilter}
-            >Aman</Checkbox>   
-            </Stack>
-            </CheckboxGroup>    
-        </Container>
-    </Box>
-    }
-    </BrandWrapper>
-    <h1>Sort</h1>
-      <div onChange={handleSort}>
-        <div>
-          <input type="radio" value='asc' name='sortBy' 
-          defaultChecked={sortBy==='asc'}
-          />
-          <label> Ascending</label>
-        </div>
-        <div>
-          <input type="radio" value='desc' name='sortBy'
-          defaultChecked={sortBy==='desc'} />
-          <label> Descending</label>
-        </div>
-      </div> 
 
 
-
-
-      {/* <h2>Filter</h2>
+      /* <h2>Filter</h2>
       <div>
         <input type="checkbox" value="K-Pop" 
         defaultChecked={category.includes('K-Pop')}
@@ -159,14 +166,14 @@ useEffect(()=>{
           defaultChecked={sortBy==='desc'} />
           <label> Descending</label>
         </div>
-      </div> */}
-    </div>
+      </div> */
+    // </div>
   )
 }
 
 const BrandWrapper=styled.div`
 border-bottom: 2px solid black;
-font-size:25px;
+font-size:5px;
 // text-align:center;
 margin:10px;
 width:80%;

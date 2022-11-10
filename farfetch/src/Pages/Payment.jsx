@@ -1,11 +1,10 @@
 import React from 'react'
-import { Flex,Box,Heading,Input,Label, Container,FormLabel,Button } from '@chakra-ui/react'
-import { useSelector } from 'react-redux'
+import { Flex,Box,Heading,Input,Container,FormLabel,Button } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 
 const Payment = () => {
-    const CartData=useSelector((store)=>store.CartReducer.Cartitem)
-    console.log(CartData)
+
 
   return (
     <Box>
@@ -54,7 +53,9 @@ const Payment = () => {
             <Box border='2px solid blue' width='300px' height='400px' mt='20px'>
             <Heading as='h3' size='md' textAlign='center'>Summary</Heading> 
             <Box>
+                <Link to="/paymentpage2">
                 <Button mt='300px' ml='60px'>Save and Continue</Button>
+                </Link>
             </Box>
             </Box>
         </Flex>

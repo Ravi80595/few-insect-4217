@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const CosmeticsData = () => {
 
     const data=useSelector((store)=>store.AppReducer.products)
-    console.log(data)
+    // console.log(data)
   return (
     <ContainerWraper>
       {
