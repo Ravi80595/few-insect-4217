@@ -5,16 +5,18 @@ import { Link } from 'react-router-dom'
 import "../Utils/ShopStructure.css"
 
 const ProductCard = ({item}) => {
-
+  // console.log(item)
   return (
     <ProductCardWrapper>
       <div>
 
       <Image src={item.image} width={300} height={300}></Image>
       </div>
-         <Heading as='h2' fontSize='lg' >{item.title}</Heading>
-        <Text>{item.category}</Text>
-        <Text>{item.price}</Text>
+         <Heading as='h2' fontSize='md' height='80px' >{item.productName}</Heading>
+        <Text>Category: {item.type}</Text>
+        <Text>Price: ${item.price}</Text>
+        <Text>Rating: {item.rating}</Text>
+        <Text>Brand: {item.brandName}</Text>
         <Link to={`/data/${item.id}`}>
         <Button marginBottom='-5px'>More Details</Button>
         </Link>
@@ -23,10 +25,12 @@ const ProductCard = ({item}) => {
 }
 
 const ProductCardWrapper = styled.div`
-  width:200px;
-  width: 289px;
+  // width:200px;
+  width: 300px;
+  // border:2px solid blue;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   margin: 10px;
-  height: 475px;
+  height: 550px;
   text-align: center;
   line-height: 30px;
 `;
