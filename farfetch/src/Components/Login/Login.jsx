@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../Navbar/Nav.module.css";
 import {
   Modal,
@@ -30,23 +29,26 @@ import { useDispatch, useSelector } from 'react-redux'
 import { LoginAuth } from "../../redux/Auth/action";
 import { onAuthStateChanged, signOut, } from "firebase/auth";
 import {auth} from "../../firebase-config"
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 
 
 const Login = () => {
-  const [authentication,setAuthentication]=React.useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
-  const [email,setEmail]=React.useState("");
-  const [pass,setPass]=React.useState("");
-  const [userIcon,setuserIcon]=React.useState(true);
-
+  const [show, setShow] = useState(false);
+  const [email,setEmail]=useState("");
+  const [pass,setPass]=useState("");
+  const [userIcon,setuserIcon]=useState(true);
   const dispatch=useDispatch()
+  const mssg= useSelector((state)=>state.Auth.isLMError)
+  const isError=useSelector((state)=>state.Auth.isLError)
+  const success=useSelector((state)=>state.Auth.sucess)
+  const [isAuth,setIsAuth]=useState(success)
 
-    const mssg= useSelector((state)=>state.Auth.isLMError)
-    const isError=useSelector((state)=>state.Auth.isLError)
-    const success=useSelector((state)=>state.Auth.sucess)
+  
+
+
+
+  const handleClick = () => setShow(!show);
 
     useEffect(()=>{
       if(isError){
@@ -57,7 +59,11 @@ const Login = () => {
         alert("Welcome")
       }
 
+      setIsAuth(success)
+
     },[isError,success])
+
+    
 
 
     // useEffect(()=>{
@@ -66,9 +72,6 @@ const Login = () => {
     //         setuserIcon(false)
     //     })
     // },[])
-
-    // let res=JSON.parse(sessionStorage.getItem("login"))
-    // console.log(res?.user.email)
 
 
     const register=()=>{
@@ -80,12 +83,12 @@ const Login = () => {
     const handleLogOut= async ()=>{
         await signOut(auth)
         setuserIcon(true)
-        setAuthentication(false)
+        setIsAuth(false)
     }
 
   return (
     <Box w="35x">
-      {authentication && <Button _hover={{ bg: "white" }} onClick={handleLogOut} bg="white">Logout</Button>}
+      {isAuth && <Button _hover={{ bg: "white" }} onClick={handleLogOut} bg="white">Logout</Button>}
 
       {userIcon && <Button _hover={{ bg: "white" }} onClick={onOpen} bg="white">
         <CiUser className={styles.logo} />

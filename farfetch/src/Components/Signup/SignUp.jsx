@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import {
     Button,
     TabPanel,
@@ -17,15 +17,29 @@ import { useDispatch, useSelector } from 'react-redux'
 import { signAuth } from '../../redux/Auth/action';
 
 const SignUp = () => {
-    const [show, setShow] = React.useState(false)
+    const [show, setShow] = useState(false)
     const handleClick = () => setShow(!show)
-    const [email,setEmail]=React.useState("");
-    const [pass,setPass]=React.useState("");
-    const [name,setName]=React.useState("");
+    const [email,setEmail]=useState("");
+    const [pass,setPass]=useState("");
+    const [name,setName]=useState("");
     const dispatch=useDispatch()
-
     const mssg = useSelector((state)=>state.Auth.isSMError)
-    const isError = useSelector((store)=>store.Auth.isSError)
+    const isError = useSelector((state)=>state.Auth.isSError)
+    const failure = useSelector((state)=>state.Auth.failure)
+
+
+
+    useEffect(()=>{
+
+        if(isError){
+          alert(mssg)
+        }
+  
+        if(failure){
+          alert("Welcome")
+        }
+  
+      },[isError,failure])
 
       
     const register=()=>{

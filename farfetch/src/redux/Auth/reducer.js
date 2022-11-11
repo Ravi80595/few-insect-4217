@@ -8,6 +8,7 @@ const initialState = {
     isLMError:[],
     isSError: false,
     isSMError: [],
+    failure:false,
   };
 
   
@@ -20,6 +21,7 @@ export const reducer = (state = initialState,action) => {
             ...state,
             SignUp:payload,
             isSError: false,
+            failure:true,
         }
 
     case types.GET_SIGNUP_FAILURE:
@@ -27,7 +29,8 @@ export const reducer = (state = initialState,action) => {
         ...state,
         isSError:true,
         isSMError:payload,
-        SignUp:[]
+        SignUp:[],
+        failure:false
       }
 
     case types.GET_LOGIN_SUCCESS:
