@@ -21,6 +21,7 @@ import heroImg10 from "../../assets/heroImg10.jpg"
 import MobNav from "./MobNav";
 import Login from "../Login/Login";
 import { Link } from "react-router-dom";
+import { GrUserAdmin } from "react-icons/gr";
 
 const Navbar = () => {
     const dispatch=useDispatch()
@@ -50,14 +51,13 @@ const Navbar = () => {
                  <Flex alignItems="center" mr="60px" gap="15px">
                     <Country countries={countries}/>
                     <Login />
-                    <Link>Admin</Link>
                     <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
 
                     <Link to='/cartPage'>
                     <BsBag className={styles.logo}/>
                     {/* {cartCount.length} */}
                     </Link>
-                    
+                    <Link to="/admin"> <GrUserAdmin className={styles.logo} /></Link>
                  </Flex>
             </Flex>
 

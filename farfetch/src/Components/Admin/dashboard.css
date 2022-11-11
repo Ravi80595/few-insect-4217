@@ -79,13 +79,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* #logo {
-  width: 50px;
-}
-
-#logo > img {
-  width: 100%;
-} */
 
 #title_div > h4 {
   margin-left: 10px;
@@ -155,9 +148,6 @@ table thead tr {
   border-top: 1px solid #e5e7eb;
 }
 
-table thead tr th {
-  /* border: 1px solid red; */
-}
 
 td,
 th {
