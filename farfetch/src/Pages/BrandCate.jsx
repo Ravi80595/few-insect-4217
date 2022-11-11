@@ -32,17 +32,14 @@ const BrandCate = () => {
         ]
   return (
     <>
-   
-      <Flex  gap='16px' direction={['column','column','row']}>
-        
+      
+      <Flex  gap='16px'>
             {Brands.map(({id,img,text1})=>(
          <Box key={id}  >
-          
-        
-         <Image w='100%' 
+         <Image boxSize='100%' 
          src={img}
          />
-         <Text mt='3'>{text1}</Text>
+         <Text>{text1}</Text>
          
          </Box>
     ))}
