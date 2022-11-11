@@ -32,7 +32,7 @@ const HelpContent = () => {
         ]
   return (
    <>
-     <Flex  gap='29px' maxW='100%'>
+     <Flex  gap='29px' maxW='100%' direction={['column','column','row']}>
             {Brands.map(({id,icon,text1,text2})=>(
          <Box key={id}  border='1px'borderColor='gray.200'
          h='150px' w='500px'

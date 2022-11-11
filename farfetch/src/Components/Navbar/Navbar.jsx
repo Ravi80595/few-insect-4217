@@ -20,7 +20,7 @@ import heroImg8 from "../../assets/heroImg8.jpg"
 import heroImg9 from "../../assets/heroImg9.jpg"
 import heroImg10 from "../../assets/heroImg10.jpg"
 import MobNav from "./MobNav";
-import Login from "../Login/Login";
+import Login from "../Login/MobLogin";
 
 const Navbar = () => {
     const dispatch=useDispatch()

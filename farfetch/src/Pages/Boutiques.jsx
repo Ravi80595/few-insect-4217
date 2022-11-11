@@ -48,7 +48,7 @@ const Boutiques = () => {
 
   return (
     <>
-    <Flex  gap='16px'bg='red'>
+    <Flex  gap='16px'direction={['column','column','row']}>
     {Brands.map(({id,img,text1,text2,text3,price})=>(
          <Box key={id}  >
          <Image boxSize='100%' 

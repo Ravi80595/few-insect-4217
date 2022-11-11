@@ -6,6 +6,7 @@ import BrandCate from './BrandCate'
 import HelpContent from './HelpContent'
 import {Link} from "react-router-dom"
 import HomeInput from './HomeInput'
+import { FooterContainer } from './Footer/containers/footer'
 
 const HomePage = () => {
    
@@ -15,7 +16,7 @@ const HomePage = () => {
     <>
      <Link to = "/cartPage">
         
-    <Flex color='black' w='90%' ml='20' mt='10'  >
+    <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
         
         <Box w='50%'  >
         <Image boxSize='600px' src='https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4017102/data/b271794d1e368cacbb73b7fdd1fb3251/1x1_messaging-side/637/data.jpeg' alt='Dan Abramov' w='100%'  />
@@ -37,7 +38,7 @@ const HomePage = () => {
         
     </Flex></Link> 
 
-    <Flex color='black' w='90%' ml='20' mt='10' >
+    <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
        
     
         <Box w='50%' h='600px' align='center'   >
@@ -57,7 +58,7 @@ const HomePage = () => {
         </Box>
     </Flex>
 
-    <Flex color='black' w='90%' ml='20' mt='10' gap='16px' >
+    <Flex color='black' w='90%' ml='20' mt='10' gap='16px' direction={['column','column','row']}>
         <Box w='49%'   >
         <Image boxSize='500px' src='https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4031482/data/46ff3c7a489afe1661d7f5a19c6d7601/1x1_two-columns/637/data.jpeg' alt='Dan Abramov' w='100%'  />
         <Text fontSize='lg' align='flex-start' m='0' >75 STATEMENT SHIRTS</Text>
@@ -73,7 +74,7 @@ const HomePage = () => {
 
     </Flex>
 
-    <Flex  w='90%' ml='20' mt='10'>
+    <Flex  w='90%' ml='20' mt='10' direction={['column','column','row']}>
         <Box p='4' >
             <Text fontSize='lg'>New in: hand-picked daily from the world’s best brands and boutiques</Text>
         </Box>
@@ -85,14 +86,14 @@ const HomePage = () => {
 
     </Flex>
 
-    <Flex  w='90%' ml='20' mt='10' mb='20' >
+    <Flex  w='90%' ml='20' mt='10' mb='20' direction={['column','column','row']} >
         
         <Boutiques />
 
        
     </Flex>
     
-    <Flex color='black' w='90%' ml='20' mt='40' >
+    <Flex color='black' w='90%' ml='20' mt='40' direction={['column','column','row']} >
        
     
        <Box w='50%' h='600px'  align='center' >
@@ -109,7 +110,7 @@ const HomePage = () => {
        </Box>
    </Flex>
    <Text fontSize='3xl'pt='20'align={'center'}>Shop gifts by category</Text>
-   <Flex  w='90%' ml='20' mt='10' mb='20' >
+   <Flex  w='90%' ml='20' mt='10' mb='20'  >
   
         <CategoryGift />
        
@@ -160,13 +161,18 @@ const HomePage = () => {
        
     </Flex>
 
-    <Flex  w='90%' ml='20' mt='20' >
+    <Flex  w='90%' ml='20' mt='20' mb='20' >
         
         <HomeInput/>
 
        
     </Flex>
+   
+        
+    <FooterContainer />
+       
     
+       
     </>
     
   )

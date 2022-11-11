@@ -19,7 +19,7 @@ import {
 import mobLogo from "../../assets/mobLogo.jpeg"
 import { BsBag } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
-import Login from "../Login/Login";
+import Login from "../Login/MobLogin";
 import MobLogin from "../Login/MobLogin";
 
 const MobNav = () => {

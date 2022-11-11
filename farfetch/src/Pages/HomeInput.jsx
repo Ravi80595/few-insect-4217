@@ -3,7 +3,10 @@ import { Radio, RadioGroup,Box,Checkbox,Input,Stack,InputGroup,InputLeftAddon,Bu
 
 import { Text } from '@chakra-ui/react';
 
+
 const HomeInput = () => {
+
+  
   return (
     <>
     <Box  w='40%' m='auto' >
@@ -27,7 +30,13 @@ const HomeInput = () => {
     <InputLeftAddon children="+91" mt='3'mb='5' />
     <Input type="tel" roundedLeft="0" w='340px' placeholder="phone number" mt='3'mb='5' />
   </InputGroup>
-  <Button variantColor="white" bg='black'color='white' w='400px' align='center' >Sign Up</Button>
+
+  
+  <Button variantColor="white" bg='black'color='white' w='400px' align='center' mb='2'
+ 
+  >Sign Up</Button>
+ 
+
   <Text fontSize='sm'lineHeight={1} align='center'>By signing up, you agree to our Privacy Policy. Unsubscribe anytime at the bottom of our emails.</Text>
   
 
