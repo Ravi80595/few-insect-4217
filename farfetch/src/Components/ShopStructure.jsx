@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { getData } from '../redux/AppReducer/action'
 import CosmeticsData from './CosmeticsData'
 import FilterSort from './FilterSort'
+import FilterBox from './FilterBox'
 
 const ShopStructure = () => {
   const dispatch=useDispatch()
@@ -20,21 +21,17 @@ useEffect(()=>{
         {/* <Box width='20%'> */}
         <FilterWrapper>
         <h2> <b> Filters ></b></h2>
-            {/* <Heading as="h2" size="md" mb='50px'>Filters</Heading>
-            <Box>
-                <Container className='Filter_Selectr'><Select>
-                    <option value="">Category</option>
-                    <option value="">Category</option>
-                    <option value="">Category</option>
-                    <option value="">Category</option>
-                    </Select></Container>
-                <Container className='Filter_Selectr'><Select></Select></Container>
-                <Container className='Filter_Selectr'><Select></Select></Container>
-                <Container className='Filter_Selectr'><Select></Select></Container>
-                <Container className='Filter_Selectr'><Select></Select></Container>
-                <Container className='Filter_Selectr'><Select></Select></Container>
-            </Box> */}
-            <FilterSort/>
+            <div>
+      <FilterBox categorys={"Category"} value1={"shoes"} value2={'skirts'} value3={'trouser'}
+      value4={"suits"}/>
+      <FilterBox categorys={"Brand"}/>
+      <FilterBox categorys={"Size"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Color"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Discount"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Price"} value1={"brand"} value2={''} value3={''}/>
+      <FilterBox categorys={"Conscious"} value1={"brand"} value2={''} value3={''}/>
+    </div>
+            {/* <FilterSort/> */}
         </FilterWrapper>
         <ProductsWrapper>
             <CosmeticsData />
@@ -47,7 +44,7 @@ useEffect(()=>{
 const FilterWrapper = styled.div`
   width: 20%;
   height: 600px;
-  margin-top:120px;  
+  margin-top:70px;  
   // margin=left:10px;
   margin-left: 20px;
   position:fixed; 

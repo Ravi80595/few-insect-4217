@@ -14,6 +14,7 @@ const SingleProductPage = () => {
     const [days,setDays]=useState('')
     const [productDetail,setProductDetail]=useState("")
     const datas=useSelector(store=>store.AppReducer.products)
+    console.log(productDetail)
 
     useEffect(()=>{
         if(id){
@@ -32,6 +33,12 @@ const SingleProductPage = () => {
       
 let data=[]
 
+// const addToCart=(payload)=>{
+//   data.push(payload)
+//     // console.log(data)
+// {localStorage.setItem("CartData",JSON.stringify(data))}
+// }
+
 
   return (
     <BoxWrapper>
@@ -41,9 +48,11 @@ let data=[]
             </ImageWrapper>
             <Box>
                 <DescWrapper>
-                 <Heading as='h2' size='lg'>{`${productDetail.title}`}</Heading>
+                 <Heading as='h2' size='md'>{`${productDetail.productName}`}</Heading>
                   <Text>{`Category: ${productDetail.category}`}</Text>
                   <Text>{`Price: $${productDetail.price}`}</Text> 
+                  <Text>{`Stock Available: ${productDetail.quantity}`}</Text> 
+                  <Text>{`Rating: ${productDetail.rating}`}</Text>
                   <Text>Import Duties Included*</Text>
                 </DescWrapper>
                 <Link to={'/cartpage'}>

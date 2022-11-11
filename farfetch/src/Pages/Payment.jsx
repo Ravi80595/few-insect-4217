@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Payment = () => {
 
-    const summary=JSON.parse(localStorage.getItem("CartData")) 
+    const summary=JSON.parse(localStorage.getItem("CartDatas")) 
     console.log(summary)
   return (
     <Box>
@@ -58,7 +58,7 @@ const Payment = () => {
               <Box key={Item.id} display='flex' justifyContent='space-around' m='5px'>
                 <div>
                 <Image src={Item.image} w={10}></Image>
-                <Text fontSize={{base:"xs",md:"md"}}>{Item.title}</Text>
+                <Text fontSize={{base:"xs",md:"md"}}>{Item.productName}</Text>
                 </div>
                 <div>
                 <Text pt={1} fontSize={{base:"xs",md:"md"}}> <b> ${Item.price}</b></Text>
