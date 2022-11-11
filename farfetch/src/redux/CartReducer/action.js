@@ -1,21 +1,42 @@
-import * as types from "./actionType"
+let data=[]
 
-const addToCart=(payload)=>{
-    return{
-        type:types.ADD_TO_CART,
-        payload
-    }
+const addToCart=(payload)=>(dispatch)=>{
+    data.push(payload)
+    console.log(data)
+    localStorage.setItem('CartDatas',JSON.stringify(data))   
+    console.log("item added")
 }
-const removeToCart=(payload)=>{
-    return{
-        type:types.REMOVE_TO_CART,
-        payload
-    }
+
+const CartData=JSON.parse(localStorage.getItem("CartDatas")) 
+
+const removeToCart=(id,index)=>(dispatch)=>{
+    console.log(index)
+    const Data1=CartData.splice(index,1)
+    localStorage.setItem('CartData',JSON.stringify(Data1))
+          
 }
 const checkoutCart=()=>{
     return{
-        type:types.CHECKOUT
+     
     }
 }
+
+
+// export const addToCart=(payload)=>(
+//     {
+//     type:'ADD_TO_CART',
+//     payload
+// })
+
+// export const removeFromCart=(webID)=>({
+//     type:"REMOVE_FROM_CART",
+//     payload:webID
+// })
+
+// export const checkout=()=>({
+//     type:"CHECKOUT"
+// })
+
+
 
 export {addToCart,removeToCart,checkoutCart}

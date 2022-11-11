@@ -21,9 +21,9 @@ const getDataFailure=()=>{
 
 // Data Fetching Here
 
-const getData=()=>(dispatch)=>{
-    dispatch(getDataRequest())
-   return axios("http://localhost:8080/products").then((r)=>{
+const getData=(queryParams)=>(dispatch)=>{
+         dispatch(getDataRequest())
+return axios("http://localhost:8080/products",queryParams).then((r)=>{
         dispatch(getDataSuccess(r.data))
         // console.log(r.data)
     }).catch((e)=>{

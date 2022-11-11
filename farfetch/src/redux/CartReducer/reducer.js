@@ -1,30 +1,24 @@
-import * as types from "./actionType"
 
-const CartState={
-    Cartitem:[]
-}
-
-export const reducer=(state=CartState,action)=>{
-    const {type,payload}=action
-    switch(type){
-        case types.ADD_TO_CART:{
-            return{
-               ...state,
-               Cartitem:payload
-            }
+export const reducer=(state=[],action)=>{
+    // console.log(state)
+    switch(action.type){
+        case"ADD_TO_CART":{
+            return [...state,action.payload]
+           
         }
-        
-        case types.REMOVE_TO_CART:{
-            const cartAfterItemRemoval = state.filter(
-                (item)=>item.id === payload
-              )
-              return cartAfterItemRemoval
-        }
-        case types.CHECKOUT:{
-            return []
-        }
+        // case "REMOVE_FROM_CART":{
+        //     const cartAfterItemRemoval = state.filter(
+        //         (item)=>item.webID=== action.payload
+        //     )
+        //     return cartAfterItemRemoval
+        // }
+        // case'CHECKOUT':{
+        //     return []
+        // }
         default:{
             return state;
         }
     }
 }
+
+// export default reducer

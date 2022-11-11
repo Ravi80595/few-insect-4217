@@ -2,8 +2,7 @@ import styles from "./Nav.module.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BsBag } from "react-icons/bs";
-import { CiUser } from "react-icons/ci";
-import {Box, Link,Text,Flex,Input} from "@chakra-ui/react"
+import {Box,Text,Flex,Input} from "@chakra-ui/react"
 import { useEffect } from 'react';
 import { getCountries } from '../../redux/SearchReducer/action';
 import Country from './Country';
@@ -22,22 +21,27 @@ import heroImg10 from "../../assets/heroImg10.jpg"
 import MobNav from "./MobNav";
 import Login from "../Login/Login";
 
+import { Link } from "react-router-dom";
+
+
 const Navbar = () => {
     const dispatch=useDispatch()
-    const countries = useSelector((store)=>store.SearchReducer.countries)
+    const countries = useSelector((state)=>state.SearchReducer.countries)
     
 
     useEffect(()=>{
         dispatch(getCountries)
     },[])
 
+    const cartCount=JSON.parse(localStorage.getItem("CartData")) 
+
   return (
     <>
         <div className={styles.mainDiv}>
             <Flex justifyContent="space-between" alignItems="center" >
                 <Flex ml="50px" gap="20px" >
-                    <Link _hover={{outline:"none"}}>Women</Link>
-                    <Link _hover={{outline:"none"}}>Men</Link>
+                    <Link to='/menpage' _hover={{outline:"none"}}>Women</Link>
+                    <Link to='/' _hover={{outline:"none"}}>Men</Link>
                     <Link _hover={{outline:"none"}}>Kids</Link>
                 </Flex>
 
@@ -48,8 +52,17 @@ const Navbar = () => {
                  <Flex alignItems="center" mr="60px" gap="15px">
                     <Country countries={countries}/>
                     <Login />
+
                     <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
+
+                    <Link>Admin</Link>
+                    <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
+
+                    <Link to='/cartPage'>
                     <BsBag className={styles.logo}/>
+                    {/* {cartCount.length} */}
+                    </Link>
+                    
                  </Flex>
             </Flex>
 

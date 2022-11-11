@@ -4,14 +4,19 @@ import Boutiques from './Boutiques'
 import CategoryGift from './CategoryGift'
 import BrandCate from './BrandCate'
 import HelpContent from './HelpContent'
+
 import {Link} from "react-router-dom"
 import HomeInput from './HomeInput'
 import { FooterContainer } from './Footer/containers/footer'
+
+import { Link } from 'react-router-dom'
+
 
 const HomePage = () => {
    
         
   return (
+
     
     <>
      <Link to = "/cartPage">
@@ -19,6 +24,11 @@ const HomePage = () => {
     <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
         
         <Box w='50%'  >
+
+    <>
+    <Flex color='black' w='90%' ml='20' mt='10' >
+        <Box w='50%'   >
+
         <Image boxSize='600px' src='https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4017102/data/b271794d1e368cacbb73b7fdd1fb3251/1x1_messaging-side/637/data.jpeg' alt='Dan Abramov' w='100%'  />
         </Box>
     
@@ -29,10 +39,18 @@ const HomePage = () => {
             iconic brands with 22% off.Offer available on selected <br/>
             full-price items</Text>
             <br/>
+
            
             <Button colorScheme='teal' variant='outline'>
                 Shop Now
             </Button>   
+
+            <Link to="shop">
+            <Button colorScheme='teal' variant='outline'>
+                Shop Now
+            </Button>    
+            </Link>
+
         
         </Box>
         
