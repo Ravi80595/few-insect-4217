@@ -31,6 +31,8 @@ const Navbar = () => {
         dispatch(getCountries)
     },[])
 
+    const cartCount=JSON.parse(localStorage.getItem("CartData")) 
+
   return (
     <>
         <div className={styles.mainDiv}>

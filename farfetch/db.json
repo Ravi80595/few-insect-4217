@@ -781,6 +781,7 @@
       "brandName": "natural",
       "quantity": 50
     }
+
   ],
   
   "admin_users": [
@@ -788,5 +789,7 @@
       "username": "admin",
       "password": "admin"
     }
+
+
   ]
 }
