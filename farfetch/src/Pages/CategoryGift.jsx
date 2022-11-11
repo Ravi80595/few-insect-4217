@@ -36,7 +36,7 @@ const CategoryGift = () => {
          <Image boxSize='100%' 
          src={img}
          />
-         <Text>{text1}</Text>
+         <Text mt='3'>{text1}</Text>
          
          </Box>
     ))}

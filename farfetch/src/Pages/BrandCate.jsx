@@ -39,10 +39,10 @@ const BrandCate = () => {
          <Box key={id}  >
           
         
-         <Image boxSize='100%' 
+         <Image w='100%' 
          src={img}
          />
-         <Text>{text1}</Text>
+         <Text mt='3'>{text1}</Text>
          
          </Box>
     ))}

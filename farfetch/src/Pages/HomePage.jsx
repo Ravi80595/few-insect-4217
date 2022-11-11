@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     // <div>HomePage</div>
     <>
-     <Link to = "/cartPage">
+     <Link to = "/S">
         
     <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
         
@@ -23,7 +23,7 @@ const HomePage = () => {
         </Box>
     
         <Box w='50%' h='600px'  align='center'  >
-            <Text fontSize='6xl'pt='10'lineHeight='1.2' fontWeight='bold'>22% OFF YOUR <br/> NEW WARDROBE</Text>
+            <Text fontSize={['xl','3xl','6xl']}pt='10'lineHeight='1.2' fontWeight='bold'>22% OFF YOUR <br/> NEW WARDROBE</Text>
             <br />
             <Text fontSize='lg'  >For a limited time only, you can shop the world's most <br/>
             iconic brands with 22% off.Offer available on selected <br/>
@@ -41,8 +41,8 @@ const HomePage = () => {
     <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
        
     
-        <Box w='50%' h='600px' align='center'   >
-            <Text fontSize='6xl'pt='20' lineHeight='1'>Party hearder: amped-up looks for every <br/>occasion</Text>
+        <Box w='50%' h='600px' textAlign={['center','center','center']} mr='3' align='center' >
+            <Text fontSize={['xl','3xl','4xl']}pt='20' lineHeight='1'>Party hearder: amped-up looks for every <br/>occasion</Text>
             <br />
             <Text fontSize='lg' >Time to throw out the partywear rule book: introducing high-impact knits,<br/>
             offbeat separates and unexpected suiting for the the freshest take on event<br/>dressing</Text>
@@ -97,7 +97,7 @@ const HomePage = () => {
        
     
        <Box w='50%' h='600px'  align='center' >
-           <Text fontSize='6xl'pt='20'lineHeight={1}>THE TRIPLE<br/> STITCH SNEAKER</Text>
+           <Text fontSize='4xl'pt='20'lineHeight={1} fontWeight='bold'>THE TRIPLE<br/> STITCH SNEAKER</Text>
            <br />
            <Text fontSize='lg' >Shop Zegna</Text>
            <br/>
