@@ -48,6 +48,7 @@ const Navbar = () => {
                  <Flex alignItems="center" mr="60px" gap="15px">
                     <Country countries={countries}/>
                     <Login />
+                    <Link>Admin</Link>
                     <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
 
                     <Link to='/cartPage'>

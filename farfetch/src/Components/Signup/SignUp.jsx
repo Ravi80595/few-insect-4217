@@ -36,7 +36,7 @@ const SignUp = () => {
         }
   
         if(failure){
-          alert("Welcome")
+          alert("Account Created Successfully")
         }
   
       },[isError,failure])

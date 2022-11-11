@@ -57,6 +57,7 @@ const Login = () => {
 
       if(success){
         alert("Welcome")
+        setuserIcon(false)
       }
 
       setIsAuth(success)
