@@ -27,7 +27,7 @@ const Country = (props) => {
         setFlag(flag)
     }
   return (
-    <>
+    <Box w="35px">
       <Button _hover={{bg:"white"}} bg="white"  onClick={onOpen}>
         <Avatar size="xs" src={flag} />
       </Button>
@@ -71,7 +71,7 @@ const Country = (props) => {
 
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   )
 }
 

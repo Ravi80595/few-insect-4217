@@ -2,7 +2,6 @@ import styles from "./Nav.module.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BsBag } from "react-icons/bs";
-import { CiUser } from "react-icons/ci";
 import {Box,Text,Flex,Input} from "@chakra-ui/react"
 import { useEffect } from 'react';
 import { getCountries } from '../../redux/SearchReducer/action';
@@ -20,13 +19,14 @@ import heroImg8 from "../../assets/heroImg8.jpg"
 import heroImg9 from "../../assets/heroImg9.jpg"
 import heroImg10 from "../../assets/heroImg10.jpg"
 import MobNav from "./MobNav";
+import Login from "../Login/Login";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
     const dispatch=useDispatch()
-    const countries = useSelector((store)=>store.SearchReducer.countries)
+    const countries = useSelector((state)=>state.SearchReducer.countries)
     
+
     useEffect(()=>{
         dispatch(getCountries)
     },[])
@@ -49,12 +49,14 @@ const Navbar = () => {
 
                  <Flex alignItems="center" mr="60px" gap="15px">
                     <Country countries={countries}/>
-                    <CiUser className={styles.logo} />
-                    <IoIosHeartEmpty className={styles.logo} />
+                    <Login />
+                    <IoIosHeartEmpty style={{marginRight:"10px"}} className={styles.logo} />
+
                     <Link to='/cartPage'>
                     <BsBag className={styles.logo}/>
                     {/* {cartCount.length} */}
                     </Link>
+                    
                  </Flex>
             </Flex>
 
