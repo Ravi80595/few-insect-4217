@@ -11,7 +11,10 @@ function App() {
     <Navbar/>
     <AllRoutes/>
      {/* //<HomePage /> */}
+
+
      {/* <DataFetch/> */}
+
 
     </div>
   );
