@@ -1,6 +1,5 @@
 {
   "products": [
-    
     {
       "id": "2251832762473266",
       "productName": "Men Casual Shoes Lac-up Men Shoes Lightweight Comfortable Breathable Walking Sneakers Tenis masculino Zapatillas Hombre",
@@ -8,7 +7,7 @@
       "rating": 1,
       "reviews": 4,
       "type": "shoes",
-      "price": 858,
+      "price": 210,
       "brandName": "natural",
       "quantity": 50,
       "status": true
@@ -213,18 +212,6 @@
       "reviews": 4,
       "type": "trouser",
       "price": 3134,
-      "brandName": "natural",
-      "quantity": 50,
-      "status": true
-    },
-    {
-      "id": "3256803717908508",
-      "productName": "Tossy Glitter Silver Party Two Piece Pants Set Women Club Night Outfits Fashion Sparkly Blazer Matching Sets Femme Tracksuit",
-      "image": "https://ae04.alicdn.com/kf/S1fc0986be0a14c80884173221926dd21G.jpg",
-      "rating": 3,
-      "reviews": 2,
-      "price": 1630,
-      "type": "trouser",
       "brandName": "natural",
       "quantity": 50,
       "status": true
