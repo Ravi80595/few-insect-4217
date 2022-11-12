@@ -19,12 +19,12 @@ import {Box,
     } from '@chakra-ui/react';
 import axios from 'axios';
 
-
-
-
 const Dashboard = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [data,setData]=useState([])
+
+
+    //.................... Fetch request.....................//
 
     const fetchData=()=>{
         axios.get("http://localhost:8080/products")
@@ -36,11 +36,96 @@ const Dashboard = () => {
         })
     }
 
-    useEffect(()=>{
 
+    //.................... Quantity Edit request.....................//
+
+    const handleEditQ=(id)=>{
+     let newQty=prompt("Enter New Quantity")
+     console.log(newQty)
+     if (newQty !== 0 || newQty !== null || newQty>1){
+       axios.patch(`http://localhost:8080/products/${id}`,{quantity :+newQty})
+       .then((res)=>{
         fetchData()
+        alert("Inventory Updated");
+       })
+       .catch((err)=>{
+        console.log(err)
+       })
+     }
+    }
 
+    const handleReduce=(id,qty)=>{
+      axios.patch(`http://localhost:8080/products/${id}`,{quantity :qty-1})
+      .then((res)=>{
+        fetchData()
+      })
+      .catch((err)=>{
+        console.log(err.message)
+      })
+    }
+
+    const handleIncrease=(id,qty)=>{
+      axios.patch(`http://localhost:8080/products/${id}`,{quantity :qty+1})
+      .then((res)=>{
+        fetchData()
+      })
+      .catch((err)=>{
+        console.log(err.message)
+      })
+    }
+
+
+     //.................... Price Edit request.....................//
+
+     const handlePrice=(id)=>{
+
+      let newPricec=prompt("Enter New Quantity")
+      if (newPricec === 0) return;
+      axios.patch(`http://localhost:8080/products/${id}`,{price :+newPricec})
+      .then((res)=>{
+       fetchData()
+       alert("Inventory Updated");
+      })
+      .catch((err)=>{
+       console.log(err)
+      })
+
+     }
+
+
+     //.................... Active & Deactive request.....................//
+
+
+     const handleActive=(id,status)=>{
+      axios.patch(`http://localhost:8080/products/${id}`,{status:!status})
+      .then((res)=>{
+        fetchData()
+      })
+      .catch((err)=>{
+        console.log(err.message)
+      })
+     }
+
+
+
+
+
+    //.................... Delete request.....................//
+
+    const handleDelete=(id)=>{
+      axios.delete(`http://localhost:8080/products/${id}`)
+      .then((res)=>{
+        fetchData()
+      })
+      .then((err)=>{
+        console.log(err)
+      })
+    }
+
+    useEffect(()=>{
+        fetchData()
     },[])
+
 
 
 
@@ -156,19 +241,24 @@ const Dashboard = () => {
                             <img src={ele.image} alt="" />
                         </td>
                         <td>
-                            <span>{ele.title}</span>
+                            <span>{ele.productName}</span>
                         </td>
                         <td>
-                            <span>{<Flex gap="7px" alignItems="center">{ele.rating.count}<EditIcon/></Flex>}</span>
+                            {<Flex fontSize="15px"  ml="30px" gap="7px"  alignItems="center">
+                              <Box onClick={()=>handleReduce(ele.id,ele.quantity)} _hover={{cursor:"pointer"}}>-</Box> 
+                              <Box onClick={()=>handleEditQ(ele.id)}>{ele.quantity}</Box>
+                              <Box fontStyle="18px" _hover={{cursor:"pointer"}} onClick={()=>handleIncrease(ele.id,ele.quantity)}>+</Box></Flex>}
                         </td>
                         <td>
-                            <span>{<Flex gap="7px" alignItems="center">{ele.price}<EditIcon/></Flex>}</span>
+                            {<Flex onClick={()=>handlePrice(ele.id)} fontSize="15px" _hover={{cursor:"pointer"}} ml="30px" gap="7px" alignItems="center">{ele.price}<EditIcon /></Flex>}
                         </td>
                         <td>
-                            <span>Active</span>
+                            {ele.status?
+                            <Box onClick={()=>handleActive(ele.id,ele.status)} _hover={{cursor:"pointer"}} ml="10px" textAlign="center" p="1px" w="75px" bg="rgb(39, 177, 39);" borderRadius="30px" color="white">Active</Box>
+                            :<Box onClick={()=>handleActive(ele.id,ele.status)} _hover={{cursor:"pointer"}} ml="10px" textAlign="center" p="1px" w="75px" bg="rgb(238, 68, 68);" borderRadius="30px" color="white">InActive</Box>}
                         </td>
                         <td>
-                            <span>{<DeleteIcon/>}</span>
+                            <DeleteIcon onClick={()=>handleDelete(ele.id)} w="25px" h="25px" _hover={{color:"red",cursor:"pointer"}} />
                         </td>
                     </tr>
                     </>
