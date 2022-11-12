@@ -1,9 +1,6 @@
 import React from 'react'
-import {Box,TableContainer,Table,Thead,Tr,Th,Tbody,Td,Tfoot,Center,Button,AlertDialog,AlertDialogOverlay,AlertDialogContent,AlertDialogHeader,AlertDialogBody,AlertDialogFooter,Container,Flex,Text, useStatStyles} from '@chakra-ui/react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useDisclosure } from '@chakra-ui/react'
-import { checkoutCart } from '../redux/CartReducer/action'
-import { removeToCart } from '../redux/CartReducer/action'
+import {Box,TableContainer,Table,Thead,Tr,Th,Tbody,Td,Tfoot,Button,Container} from '@chakra-ui/react'
+import { useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom'
 import "../Utils/ShopStructure.css"
 import { useState } from 'react'
@@ -11,26 +8,15 @@ import { useState } from 'react'
 const CartPage = () => {
   const CartData=JSON.parse(localStorage.getItem("CartDatas")) 
   const [quan,setQuan]=useState('1')
-  // const cdata=useSelector((store)=>store.CartReducer.state)
-  // console.log(cdata)
   
   const dispatch=useDispatch()
-  // const {isOpen,onOpen,onClose}=useDisclosure()
-  // const cancelRef=React.useRef()
-
-  const handleIncrease=()=>{
-    setQuan(Number(quan)+1)
-    
-  }
-  const handledecrease=()=>{
-    setQuan(Number(quan)-1)
-  }
 
 
-  const removeToCart=(index)=>{
-    console.log(index)
-   const Data1=CartData.splice(index,1)
-    localStorage.setItem('CartData',JSON.stringify(Data1))  
+  const removeToCart=(id,index)=>{
+    let Cart=JSON.parse(localStorage.getItem("CartDatas"))
+    let Data1=Cart.splice(index,1)
+    localStorage.setItem('CartDatas',JSON.stringify(Cart))
+    window.location.reload()  
   }
 
   return (
@@ -55,31 +41,18 @@ const CartPage = () => {
               CartData.map((Item,index)=>(
               <Tr key={Item.id}>
                 <Td fontSize={{base:"xs",md:"md"}}>{Item.productName}</Td>
-                {/* <Td> */}
-                {/* <Flex>  
-                  <Button  onClick={handleIncrease} className='QuanBox' fontSize='25px'>+</Button>
-                  <Text p={3} fontSize="25px">{quan}</Text>
-                  <Button disabled={quan<2} onClick={handledecrease} className='QuanBox' fontSize='25px'>-</Button>
-                </Flex> */}
-
-                {/* </Td> */}
                 <Td fontSize={{base:"xs",md:"md"}}>${`${Math.round(Item.price * quan)}`}</Td>
                 <Td fontSize={{base:"xs",md:"md"}}>
-                  <Button onClick={()=>dispatch(removeToCart(Item.id,index))} >Remove</Button>
+                  <Button onClick={()=>removeToCart(Item.id)} >Remove</Button>
                 </Td>
               </Tr>
             ))}
-            {/* let r={Math.round(CartData.reduce((a,c)=>a+c.price,0))} */}
           </Tbody>
           <Tfoot>
             <Tr>
             <Th fontSize={{base:"xs",md:"md"}}>Final Price</Th>
             <Th fontSize={{base:"xs",md:"md"}}>
               {Math.round(CartData.reduce((a,c)=>a+c.price,0))}
-              {
-              
-                
-              }
             </Th>
             </Tr>
           </Tfoot>
@@ -87,7 +60,7 @@ const CartPage = () => {
       </TableContainer>
       <Container>
         <Link to="/payment">
-        <Button>Checkout</Button>
+        <Button mb="50px" mt='10px'>Checkout</Button>
         </Link>
       </Container>
       

@@ -33,11 +33,11 @@ const SingleProductPage = () => {
       
 let data=[]
 
-// const addToCart=(payload)=>{
-//   data.push(payload)
-//     // console.log(data)
-// {localStorage.setItem("CartData",JSON.stringify(data))}
-// }
+const addToCart=(payload)=>{
+  data.push(payload)
+    console.log(data)
+localStorage.setItem("CartDatas",JSON.stringify(data))
+}
 
 
   return (
@@ -56,7 +56,7 @@ let data=[]
                   <Text>Import Duties Included*</Text>
                 </DescWrapper>
                 <Link to={'/cartpage'}>
-                  <Button id='addToBag' onClick={()=>dispatch(addToCart(productDetail))}> Add To Bag</Button>
+                  <Button id='addToBag' onClick={()=>addToCart(productDetail)}> Add To Bag</Button>
                 </Link>
                   <button id="shipbutton">Shiping & Returns</button>
                   <Container textAlign='left'>

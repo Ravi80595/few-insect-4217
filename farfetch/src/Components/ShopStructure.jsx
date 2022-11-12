@@ -1,22 +1,83 @@
 import React, { useEffect } from 'react'
 import "../Utils/ShopStructure.css"
-import {Box,Container,Flex,Heading,Select} from "@chakra-ui/react"
+import {Box,Container,Flex,Heading,Select,Stack,Skeleton,Alert,AlertIcon,AlertDescription} from "@chakra-ui/react"
 import styled from 'styled-components'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../redux/AppReducer/action'
 import CosmeticsData from './CosmeticsData'
-import FilterSort from './FilterSort'
+// import FilterSort from './FilterSort'
 import FilterBox from './FilterBox'
 
+
 const ShopStructure = () => {
+  
   const dispatch=useDispatch()
+  const isLoading= useSelector((state)=>state.AppReducer.isLoading)
+  const isError= useSelector((state)=>state.AppReducer.isError)
+  console.log(isLoading)  
 
 useEffect(()=>{
   dispatch(getData())
 },[])
 
+
+// if(isError){
+//   return(
+    
+// }
+
   return (
     <div border='2px solid red' width='100%'>
+
+{
+  isLoading  && 
+  <Stack my={20}>
+<Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  <Skeleton height="40px"/>
+  </Stack>
+}
+
+{
+  isError && 
+  <Container
+    width={{
+      base:"full",
+      sm:"full",
+      md:"container.xl",
+      lg:"container.lg",
+      
+    }}
+      centerContent={true}
+>
+<Alert 
+status="error"
+py={{base:4,sm:4,md:4,lg:6}}
+my={{base:24,sm:24,md:28,lg:40}}
+px={{base:1,sm:1,md:4,lg:6}}
+>
+  <AlertIcon/>
+  <AlertDescription>
+    Something went Wrong ,please refresh
+  </AlertDescription>
+</Alert>
+    </Container>
+
+}
+
       <Flex>
         {/* <Box width='20%'> */}
         <FilterWrapper>

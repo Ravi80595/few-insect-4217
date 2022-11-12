@@ -22,6 +22,7 @@ const getDataFailure=()=>{
 // Data Fetching Here
 
 const getData=(queryParams)=>(dispatch)=>{
+    // console.log(queryParams)
          dispatch(getDataRequest())
 return axios("http://localhost:8080/products",queryParams).then((r)=>{
         dispatch(getDataSuccess(r.data))
@@ -32,6 +33,18 @@ return axios("http://localhost:8080/products",queryParams).then((r)=>{
     })
 }
 
+const getShoes=()=>(dispatch)=>{
+ return axios("http://localhost:8080/products?type=shoes").then((r)=>{
+    dispatch(getDataSuccess(r.data))
+ })
+}
+
+const getTrouser=()=>(dispatch)=>{
+    return axios("http://localhost:8080/products?type=shoes&type=trouser").then((r)=>{
+       dispatch(getDataSuccess(r.data))
+    })
+   }
 
 
-export {getDataRequest,getDataSuccess,getDataFailure,getData}
+
+export {getDataRequest,getDataSuccess,getDataFailure,getData,getShoes,getTrouser}

@@ -4,14 +4,18 @@ import { Checkbox,CheckboxGroup,Container,Box,Stack,Flex } from '@chakra-ui/reac
 import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import { BiDownArrowAlt } from "react-icons/bi";
-
+import { useDispatch } from 'react-redux';
+import { getShoes, getTrouser } from '../redux/AppReducer/action';
 
 
 const FilterBox = (props) => {
-    const  {categorys,value1,value2,value3,value4,value5}=props
+    const  {categorys,value1,value2,value3,value4}=props
     const [height,setHeight]=useState(false)
     const [searchParams,setSearchParams]=useSearchParams();
-    const [category,setCategory]=useState(searchParams.getAll('type') || [])
+    const [category,setCategory]=useState(searchParams.getAll('type')) || []
+    const dispatch=useDispatch()
+    // const [check,setCheck]=useState(false)
+
 
     const tooglebrand=()=>{
         if(!height){
@@ -20,20 +24,37 @@ const FilterBox = (props) => {
             setHeight(false)
         }
     }
+
+
+    // if(check){
+    //   dispatch(getShoes())
+    // }
+    // else{
+    //   dispatch(getData())
+    // }
     
       
-    const handelfilter=(e)=>{
-        const options=e.target.value
+    const handlefilter=(e)=>{
+        const option=e.target.value
         let newCategory=[...category]
-        console.log(newCategory)
-        if(newCategory.includes(options)){
-          newCategory.splice(newCategory.indexOf(options),1)
+        // console.log(newCategory)
+        if(newCategory.includes(option)){
+          //Removing 
+          newCategory.splice(newCategory.indexOf(option), 1)
         }else{
-          newCategory.push(options)
+          //Adding
+          newCategory.push(option)
         }
         setCategory(newCategory)
       }
 
+      const handleShoes=()=>{
+        dispatch(getShoes())
+      }
+
+      const handletrousers=()=>{
+        dispatch(getTrouser())
+      }
 
       useEffect(()=>{
         const params={}
@@ -52,24 +73,23 @@ const FilterBox = (props) => {
             <CheckboxGroup >
             <Stack spacing={[1, 2]} direction={['column', 'column']}>
             <Checkbox defaultChecked={category.includes({value1})} style={{margin:"10px"}} 
-            onChange={handelfilter}
+            onChange={handleShoes}
+            // onChange={(e) => setCheck(e.target.checked) }
+            // isChecked={handleShoes}
             value={value1} 
             >{value1}</Checkbox>
             <Checkbox defaultChecked={category.includes({value2})} 
             value={value2} 
-             onChange={handelfilter}
+             onChange={handlefilter}
             style={{margin:"10px"}} >{value2}</Checkbox> 
             <Checkbox defaultChecked={category.includes({value3})} style={{margin:"10px"}} 
             value={value3} 
-             onChange={handelfilter}
+             onChange={handletrousers}
             >{value3}</Checkbox>  
             <Checkbox defaultChecked={category.includes({value4})} style={{margin:"10px"}} 
             value={value4} 
-             onChange={handelfilter}
+             onChange={handlefilter}
             >{value4}</Checkbox> 
-            {/* <Checkbox defaultChecked={category.includes({value5})} style={{margin:"10px"}} 
-             onChange={handelfilter}
-            >{value5}</Checkbox>   */}
             </Stack>
             </CheckboxGroup>    
         </Container>
