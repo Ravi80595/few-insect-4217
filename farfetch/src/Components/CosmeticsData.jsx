@@ -1,7 +1,6 @@
 import React from 'react'
 import "../Utils/ShopStructure.css"
 import { useSelector } from 'react-redux'
-// import ProductCard from './ProductCard'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
@@ -57,13 +56,6 @@ const CosmeticsData = () => {
     </div>
   )
 }
-
-// const ContainerWraper = styled.div`
-//   display:grid;
-//   margin-top:50px;
-//   grid-template-columns:repeat(3,1fr);
-
-// `;
 
 const ProductCardWrapper = styled.div`
   // width:200px;

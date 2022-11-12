@@ -6,7 +6,7 @@ import BrandCate from './BrandCate'
 import HelpContent from './HelpContent'
 import {Link} from "react-router-dom"
 import HomeInput from './HomeInput'
-import { FooterContainer } from './Footer/containers/footer'
+// import { FooterContainer } from './Footer/containers/footer'
 
 const HomePage = () => {
    
@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     
     <>
-     <Link to = "/cartPage">
+     
         
     <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
         
@@ -29,14 +29,14 @@ const HomePage = () => {
             iconic brands with 22% off.Offer available on selected <br/>
             full-price items</Text>
             <br/>
-           
+            <Link to = "/shop">
             <Button colorScheme='teal' variant='outline'>
                 Shop Now
             </Button>   
-        
+            </Link> 
         </Box>
         
-    </Flex></Link> 
+    </Flex>
 
     <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
        
@@ -169,7 +169,7 @@ const HomePage = () => {
     </Flex>
    
         
-    <FooterContainer />
+    {/* <FooterContainer /> */}
        
     
        

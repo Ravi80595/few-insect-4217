@@ -2,7 +2,7 @@ let data=[]
 
 const addToCart=(payload)=>(dispatch)=>{
     data.push(payload)
-    // console.log(data)
+    console.log(data)
     localStorage.setItem('CartDatas',JSON.stringify(data)) 
     // console.log("item added")
 }
