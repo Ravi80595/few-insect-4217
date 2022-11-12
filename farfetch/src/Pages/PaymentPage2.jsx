@@ -18,9 +18,13 @@ const PaymentPage2 = () => {
    }
   }
 
+  const dat=[]
   const handleCheckout=()=>{
     onClose()
-    navigate("/")
+    // const checkout=()=>{
+        localStorage.setItem("CartDatas",JSON.stringify(dat))
+      // }
+      navigate("/")
   }
 
   const cashPay=()=>{

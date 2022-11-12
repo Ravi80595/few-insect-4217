@@ -8,10 +8,10 @@ import { BiDownArrowAlt } from "react-icons/bi";
 
 
 const FilterBox = (props) => {
-    const  {categorys,value1,value2,value3,value4,value5}=props
+    const  {categorys,value1,value2,value3,value4}=props
     const [height,setHeight]=useState(false)
     const [searchParams,setSearchParams]=useSearchParams();
-    const [category,setCategory]=useState(searchParams.getAll('type') || [])
+    const [category,setCategory]=useState(searchParams.getAll('type')) || []
 
     const tooglebrand=()=>{
         if(!height){
@@ -23,13 +23,15 @@ const FilterBox = (props) => {
     
       
     const handelfilter=(e)=>{
-        const options=e.target.value
+        const option=e.target.value
         let newCategory=[...category]
-        console.log(newCategory)
-        if(newCategory.includes(options)){
-          newCategory.splice(newCategory.indexOf(options),1)
+        // console.log(newCategory)
+        if(newCategory.includes(option)){
+          //Removing 
+          newCategory.splice(newCategory.indexOf(option), 1)
         }else{
-          newCategory.push(options)
+          //Adding
+          newCategory.push(option)
         }
         setCategory(newCategory)
       }

@@ -22,6 +22,7 @@ const getDataFailure=()=>{
 // Data Fetching Here
 
 const getData=(queryParams)=>(dispatch)=>{
+    // console.log(queryParams)
          dispatch(getDataRequest())
 return axios("http://localhost:8080/products",queryParams).then((r)=>{
         dispatch(getDataSuccess(r.data))

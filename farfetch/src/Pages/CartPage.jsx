@@ -11,8 +11,8 @@ import { useState } from 'react'
 const CartPage = () => {
   const CartData=JSON.parse(localStorage.getItem("CartDatas")) 
   const [quan,setQuan]=useState('1')
-  // const cdata=useSelector((store)=>store.CartReducer.state)
-  // console.log(cdata)
+  // const CData=useSelector((store)=>store.CartReducer.state)
+  // console.log(CData)
   
   const dispatch=useDispatch()
   // const {isOpen,onOpen,onClose}=useDisclosure()
@@ -29,10 +29,16 @@ const CartPage = () => {
 
   const removeToCart=(index)=>{
     console.log(index)
-   const Data1=CartData.splice(index,1)
-    localStorage.setItem('CartData',JSON.stringify(Data1))  
+    let Cart=JSON.parse(localStorage.getItem("CartDatas")) 
+    console.log(Cart)
+    let Data1=Cart.splice(index,1)
+    localStorage.setItem('CartDatas',JSON.stringify(Data1))  
   }
 
+  // const dat=[]
+  // const checkout=()=>{
+  //   localStorage.setItem("CartDatas",JSON.stringify(dat))
+  // }
   return (
     <Box>
       <TableContainer mt={{base:20,sm:20,md:28,lg:32}}>
@@ -65,7 +71,7 @@ const CartPage = () => {
                 {/* </Td> */}
                 <Td fontSize={{base:"xs",md:"md"}}>${`${Math.round(Item.price * quan)}`}</Td>
                 <Td fontSize={{base:"xs",md:"md"}}>
-                  <Button onClick={()=>dispatch(removeToCart(Item.id,index))} >Remove</Button>
+                  <Button onClick={()=>removeToCart(index)} >Remove</Button>
                 </Td>
               </Tr>
             ))}
