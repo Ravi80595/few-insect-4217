@@ -56,7 +56,7 @@ const Login = () => {
       }
 
       if(success){
-        alert("Welcome")
+        alert("Login Sucessfull!")
         setuserIcon(false)
       }
 
@@ -94,6 +94,7 @@ const Login = () => {
       {userIcon && <Button _hover={{ bg: "white" }} onClick={onOpen} bg="white">
         <CiUser className={styles.logo} />
       </Button>}
+      
 
       <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside">
         <ModalOverlay />

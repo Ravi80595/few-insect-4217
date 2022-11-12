@@ -9,10 +9,9 @@ import Dashboard from './Components/Admin/Dashboard';
 function App() {
   return (
     <div>
-    {/* <Navbar/>
-    <AllRoutes/> */}
+    <Navbar/>
+    <AllRoutes/>
     {/* <Admin /> */}
-    <Dashboard/>
      {/* //<HomePage /> */}
 
     </div>

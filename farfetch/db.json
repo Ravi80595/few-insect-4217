@@ -9,8 +9,8 @@
       "type": "skirts",
       "price": 1263,
       "brandName": "natural",
-      "quantity": 4,
-      "status": true
+      "quantity": 43,
+      "status": false
     },
     {
       "id": "3256804227081728",
@@ -18,10 +18,10 @@
       "image": "https://ae01.alicdn.com/kf/Sb1f52306746545cf87f334a9ea650e96H.jpg",
       "rating": 2,
       "reviews": 5,
-      "price": 400,
+      "price": 399,
       "type": "skirts",
       "brandName": "natural",
-      "quantity": 10,
+      "quantity": 20,
       "status": true
     },
     {
@@ -34,7 +34,7 @@
       "price": 1845,
       "brandName": "natural",
       "quantity": 10,
-      "status": true
+      "status": false
     },
     {
       "id": "3256804202378452",
@@ -669,7 +669,7 @@
       "price": 1126,
       "type": "suits",
       "brandName": "natural",
-      "quantity": 50,
+      "quantity": 10,
       "status": true
     }
   ],

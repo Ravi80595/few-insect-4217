@@ -26,6 +26,7 @@ const Country = (props) => {
         setCounName(name);
         setFlag(flag)
     }
+    
   return (
     <Box w="35px">
       <Button _hover={{bg:"white"}} bg="white"  onClick={onOpen}>

@@ -15,21 +15,33 @@ import {Box,
         ModalCloseButton,
         useDisclosure,
         Input,
-        Select 
+        Select,
+        Spinner 
     } from '@chakra-ui/react';
 import axios from 'axios';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 const Dashboard = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [data,setData]=useState([])
+    const [loading,setLoading]=useState(false)
+    const [searchParams,setSearchParams]=useSearchParams()
+    const [sort,setSort]=useState("")
+    const [activeSort,setActiveSort]=useState("")
+
+   
 
 
     //.................... Fetch request.....................//
 
+
+
     const fetchData=()=>{
+      setLoading(true)
         axios.get("http://localhost:8080/products")
         .then((res)=>{
             setData(res.data)
+            setLoading(false)
         })
         .catch((err)=>{
             console.log(err)
@@ -123,10 +135,40 @@ const Dashboard = () => {
     }
 
     useEffect(()=>{
-        fetchData()
+      fetchData()
     },[])
 
 
+
+    //.................... SortBy Price request.....................//
+
+    const handleSort=(e)=>{
+      setSort(e.target.value)
+
+      axios.get(`http://localhost:8080/products?_sort=price&_order=${sort}`)
+      .then((res)=>{
+        setData(res.data)
+      }) 
+      .catch((err)=>{
+        console.log(err)
+      })
+
+    }
+
+      //.................... SortBy status request.....................//
+
+    const handleActiveSort=(e)=>{
+      setActiveSort(e.target.value)
+
+      axios.get(`http://localhost:8080/products?_sort=status&_order=${activeSort}`)
+      .then((res)=>{
+        setData(res.data)
+        console.log(res.data)
+      }) 
+      .catch((err)=>{
+        console.log(err)
+      })
+    }
 
 
 
@@ -164,7 +206,7 @@ const Dashboard = () => {
 
       <div id="rhs">
         <div id="navbar">
-          <Button _hover={{bg:"#f3f4f6"}} bg="#f3f4f6" color="rgb(134, 130, 238)">Log Out</Button>
+          <Button _hover={{bg:"#f3f4f6"}} bg="#f3f4f6" color="rgb(134, 130, 238)"><Link to="/">Log Out</Link></Button>
         </div>
         <div id="rhs_body">
           <div id="products_page" className="page active">
@@ -208,18 +250,18 @@ const Dashboard = () => {
               </div>
 
               <Flex gap="10px">
-                <Select placeholder='Filter By'>
+                <Select onChange={handleActiveSort} placeholder='Filter By'>
                     <option value='Active'>Active</option>
                     <option value='Inactive'>Inactive</option>
                 </Select>
 
-                <Select placeholder='Select option'>
-                    <option value='asc'>Low To High</option>
-                    <option value='desc'>High To Low</option>
+                <Select  onChange={handleSort}  placeholder='Sort by'>
+                    <option value='desc'>Low To High</option>
+                    <option value='asc'>High To Low</option>
                 </Select>
               </Flex>
-
             </div>
+
 
             <table>
               <thead>
@@ -265,6 +307,15 @@ const Dashboard = () => {
                 ))}
               </tbody>
             </table>
+            <Box w="100%" mt="50px"  textAlign="center">
+                {loading&&<Spinner
+                    thickness='4px'
+                    speed='0.65s'
+                    emptyColor='gray.200'
+                    color='blue.500'
+                    size='xl'
+                  />}
+                </Box>
           </div>
         </div>
       </div>
