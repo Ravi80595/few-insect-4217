@@ -10,15 +10,16 @@ import {
 import { useState } from 'react'
 import axios from "axios"
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Admin = () => {
     const [username, setusername] = useState('')
     const [password, setPassword] = useState('')
     const [data,setData]=useState([])
     const [isAuth,setIsAuth]=useState(false)
-
     const handleEmail = (e) => setusername(e.target.value)
     const handlePassword = (e) => setPassword(e.target.value)
+    const navigate=useNavigate()
   
     const isEError = username === ''
     const isPError = password === ''
@@ -44,9 +45,10 @@ const handleSubmit=()=>{
         let u = data[i].username;
         let p = data[i].password;
         if (u == username && p == password) {
-            alert("Login Sucessfull!")
+            alert("Login Sucessfull!");
+            navigate("/dashboard")
           }else{
-            alert("Invaild Username or Password")
+            alert("Invaild Username or Password");
           }
     }
 }

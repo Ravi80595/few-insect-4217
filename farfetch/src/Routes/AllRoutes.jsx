@@ -7,7 +7,9 @@ import HomePage from '../Pages/HomePage'
 import Payment from '../Pages/Payment'
 import MenPage from "../Pages/Homepage/MenPage"
 import PaymentPage2 from '../Pages/PaymentPage2'
-import Dashboard from "../Components/Admin/Dashboard"
+import Admin from '../Components/Admin/Admin'
+import Dashboard from '../Components/Admin/Dashboard'
+
 
 const AllRoutes = () => {
   return (
@@ -18,7 +20,8 @@ const AllRoutes = () => {
       <Route path="/cartPage" element={<CartPage/>}></Route>
       <Route path="/shop" element={<ShopStructure/>}></Route>
       <Route path="/payment" element={<Payment/>}></Route>
-      <Route path="/admin" element={<Dashboard/>}></Route>
+      <Route path="/admin" element={<Admin/>}></Route>
+      <Route path='/dashboard' element={<Dashboard />}></Route>
       <Route path="/paymentpage2" element={<PaymentPage2/>}></Route>
       <Route path="*" element={<h3>Page Not Found</h3>} />
     </Routes>

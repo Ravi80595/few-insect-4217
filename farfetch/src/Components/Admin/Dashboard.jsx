@@ -19,7 +19,8 @@ import {Box,
         Spinner 
     } from '@chakra-ui/react';
 import axios from 'axios';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link,useSearchParams } from 'react-router-dom';
+
 
 const Dashboard = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -327,4 +328,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;
