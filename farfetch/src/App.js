@@ -12,11 +12,16 @@ function App() {
   return (
     <div>
     <Navbar/>
+
+    <AllRoutes/>
+    {/* <Admin /> */}
+
     {/* <ShopStructure/> */}
     <AllRoutes/>
     <FooterContainer/>
     {/* <Admin /> */}
     {/* <Dashboard/> */}
+
      {/* //<HomePage /> */}
 
     </div>
