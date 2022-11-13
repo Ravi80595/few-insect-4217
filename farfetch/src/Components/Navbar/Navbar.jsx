@@ -22,6 +22,7 @@ import MobNav from "./MobNav";
 import Login from "../Login/Login";
 import { Link } from "react-router-dom";
 import { GrUserAdmin } from "react-icons/gr";
+import NewIn from "./NewIn";
 
 const Navbar = () => {
     const dispatch=useDispatch()
@@ -44,8 +45,8 @@ const Navbar = () => {
                     <Link _hover={{outline:"none"}}>Kids</Link>
                 </Flex>
 
-                <Box>
-                    <Text fontSize="38px" fontWeight="bold">CLOFETCH</Text>
+                <Box fontSize="38px" fontWeight="bold">
+                    <Link to="/">CLOFETCH</Link>
                  </Box>
 
                  <Flex alignItems="center" mr="60px" gap="15px">
@@ -64,7 +65,7 @@ const Navbar = () => {
             <Flex mt="10px" mb="10px" justifyContent="space-between">
                 <Flex gap="20px" ml="50px">
                     <Gifts name="Gifts" img={heroImg1}/>
-                    <Gifts name="New In" img={heroImg2}/>
+                    <NewIn name="New In" img={heroImg2}/>
                     <Gifts name="Brands" img={heroImg3}/>
                     <Gifts name="Clothing" img={heroImg4}/>
                     <Gifts name="Shoes" img={heroImg5}/>
