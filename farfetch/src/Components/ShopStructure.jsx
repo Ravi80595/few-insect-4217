@@ -9,7 +9,8 @@ import CosmeticsData from './CosmeticsData'
 import FilterBox from './FilterBox'
 import Navbar from './Navbar/Navbar'
 import { FooterContainer } from '../Pages/Footer/containers/footer'
-
+import { getSortData } from '../redux/AppReducer/action'
+import { getmenData,getwomenData } from '../redux/AppReducer/action'
 
 const ShopStructure = () => {
   
@@ -23,15 +24,35 @@ useEffect(()=>{
 },[])
 
 
-// if(isError){
-//   return(
-    
-// }
+
+const handleActiveSort=(e)=>{
+ const activeSort=e.target.value
+  dispatch(getSortData(activeSort))
+}
+
+const handleGenderSort=(e)=>{
+  const gender=e.target.value
+  if(gender==="male"){
+    dispatch(getmenData())
+  }else{
+    dispatch(getwomenData())
+  }
+}
 
   return (
     <div border='2px solid red' width='100%'>
       <Navbar/>
+      <Flex width="30%" marginLeft="68%" justifyContent="space-between" gap='5px'>
+      <Select onChange={handleActiveSort} placeholder='Sort By'>
+                    <option value='asc'>Low To High</option>
+                    <option value='desc'>High To Low</option>
+      </Select>
+      <Select onChange={handleGenderSort} placeholder='Filter By'>
+                    <option value='male'>Male</option>
+                    <option value='female'>Female</option>
+      </Select>
 
+      </Flex>
 {
   isLoading  && 
   <Stack my={20}>

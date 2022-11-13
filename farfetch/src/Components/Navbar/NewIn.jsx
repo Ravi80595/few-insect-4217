@@ -21,7 +21,7 @@ const NewIn = (props) => {
                 {name}
             </MenuButton>
             <MenuList h="450px" >
-                <Grid templateColumns='repeat(5, 1fr)'>
+                <Grid templateColumns='repeat(4, 1fr)'>
                         <GridItem>
                                 <MenuItem>WHAT'S New</MenuItem>
                                 <MenuItem>New in today</MenuItem>
@@ -47,7 +47,7 @@ const NewIn = (props) => {
                                 <MenuItem>Best of the new season</MenuItem>
                                 <MenuItem>Exclusives & collabs</MenuItem>
                         </GridItem> 
-                        <GridItem>
+                        {/* <GridItem>
                                 <MenuItem>THE HIGHLIGHTS</MenuItem>
                                 <MenuItem>All articles</MenuItem>
                                 <MenuItem>Street styles</MenuItem>
@@ -57,9 +57,9 @@ const NewIn = (props) => {
                                 <MenuItem>Plam Angels</MenuItem>
                                 <MenuItem>Frragamo</MenuItem>
                                 <MenuItem>Saint Laurent</MenuItem>
-                        </GridItem> 
+                        </GridItem>  */}
                         <GridItem>
-                                <Image w="300px" src={img}/>
+                                <Image w="200px" src={img}/>
                                 <MenuItem>Spotlight on</MenuItem>
                                 <MenuItem>WATCHES & JEWELLERY</MenuItem>
                                 <MenuItem><Link>Shop now</Link></MenuItem>

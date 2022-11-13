@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Flex,Box,Heading,Input,FormLabel,Text,Image,Tr,Td,Center,Button,AlertDialog,AlertDialogOverlay,AlertDialogContent,AlertDialogHeader,AlertDialogBody,AlertDialogFooter,Container } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar'
 // import { Link } from 'react-router-dom'
 
 const PaymentPage2 = () => {
@@ -39,11 +40,11 @@ const PaymentPage2 = () => {
 
   return (
     <Box>
+      <Navbar/>
     <Flex gap='15%'>
         <Box width='50%' boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" m='5' p='5'>  
         <Container>
           <Box>
-
         <Heading size='md' m={2}>Choose Payment Methods</Heading>
          <Flex justifyContent='space-around' mb={5}>
          <Button onClick={tooglebox1} w={155} h={110}><Image src='https://d28wu8o6itv89t.cloudfront.net/images/Visadebitcardpng-1599584312349.png' w={100} h={100}></Image></Button>
@@ -114,16 +115,13 @@ const PaymentPage2 = () => {
               <AlertDialogHeader fontSize='lg'>
                 Place Order
               </AlertDialogHeader>
-
               <AlertDialogBody>
                 Are you sure your want to place order
               </AlertDialogBody>
-
               <AlertDialogFooter>
                 <Button ref={cancelRef} onClick={onClose}>Cancel</Button>
                 <Button onClick={handleCheckout}>Yes</Button>
               </AlertDialogFooter>
-
             </AlertDialogContent>
           </AlertDialogOverlay>
         </AlertDialog>

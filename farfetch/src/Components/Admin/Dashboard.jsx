@@ -55,8 +55,6 @@ console.log(formData)
       fetchData()
     }
 
-
-
     const fetchData=()=>{
       setLoading(true)
         axios.get("http://localhost:8080/products")
