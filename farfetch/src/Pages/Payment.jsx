@@ -1,6 +1,8 @@
 import React from 'react'
 import { Flex,Box,Heading,Input,Container,FormLabel,Button,Tr,Td,Text,Image } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar'
+import { FooterContainer } from './Footer/containers/footer'
 
 
 const Payment = () => {
@@ -9,6 +11,7 @@ const Payment = () => {
     console.log(summary)
   return (
     <Box>
+        <Navbar/>
         <Flex gap='15%'>
             <Box width='50%' boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" m='5' p='5'>  
             <Container>
@@ -77,7 +80,7 @@ const Payment = () => {
             </Box>
             </Box>
         </Flex>
-      
+      <FooterContainer/>
     </Box>
   )
 }

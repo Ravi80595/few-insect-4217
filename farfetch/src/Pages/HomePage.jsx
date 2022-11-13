@@ -6,7 +6,8 @@ import BrandCate from './BrandCate'
 import HelpContent from './HelpContent'
 import {Link} from "react-router-dom"
 import HomeInput from './HomeInput'
-// import { FooterContainer } from './Footer/containers/footer'
+import Navbar from '../Components/Navbar/Navbar'
+import { FooterContainer } from './Footer/containers/footer'
 
 const HomePage = () => {
    
@@ -14,7 +15,7 @@ const HomePage = () => {
   return (
     
     <>
-     
+     <Navbar/>
         
     <Flex color='black' w='90%' ml='20' mt='10' direction={['column','column','row']} >
         
@@ -169,7 +170,7 @@ const HomePage = () => {
     </Flex>
    
         
-    {/* <FooterContainer /> */}
+    <FooterContainer />
        
     
        

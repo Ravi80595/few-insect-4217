@@ -7,6 +7,8 @@ import { getData } from '../redux/AppReducer/action'
 import CosmeticsData from './CosmeticsData'
 // import FilterSort from './FilterSort'
 import FilterBox from './FilterBox'
+import Navbar from './Navbar/Navbar'
+import { FooterContainer } from '../Pages/Footer/containers/footer'
 
 
 const ShopStructure = () => {
@@ -28,6 +30,7 @@ useEffect(()=>{
 
   return (
     <div border='2px solid red' width='100%'>
+      <Navbar/>
 
 {
   isLoading  && 
@@ -81,7 +84,7 @@ px={{base:1,sm:1,md:4,lg:6}}
       <Flex>
         {/* <Box width='20%'> */}
         <FilterWrapper>
-        <h2> <b> Filters ></b></h2>
+        <h2> <b>Filters</b></h2>
             <div>
       <FilterBox categorys={"Category"} value1={"shoes"} value2={'skirts'} value3={'trouser'}
       value4={"suits"}/>
@@ -98,6 +101,7 @@ px={{base:1,sm:1,md:4,lg:6}}
             <CosmeticsData />
         </ProductsWrapper>
       </Flex>
+      <FooterContainer/>
     </div>
   )
 }
