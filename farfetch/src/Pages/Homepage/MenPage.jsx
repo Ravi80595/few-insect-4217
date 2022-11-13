@@ -19,10 +19,12 @@ import {
   Checkbox,
   Input,
 } from '@chakra-ui/react';
+import Navbar from '../../Components/Navbar/Navbar';
 
 const MenPage = () => {
   return (
     <div>
+      <Navbar/>
       <Stack spacing={'20px'} border="1px solid white" h="auto">
         <Flex spacing="10px">
           <Box ml="50px" h="700px" w="900px" mt="10px">

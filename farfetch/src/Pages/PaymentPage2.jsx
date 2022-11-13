@@ -34,7 +34,7 @@ const PaymentPage2 = () => {
    el.style.color="white"
   }
 
-  const summary=JSON.parse(localStorage.getItem("CartData")) 
+  const summary=JSON.parse(localStorage.getItem("CartDatas")) 
     console.log(summary)
 
   return (

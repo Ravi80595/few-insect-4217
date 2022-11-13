@@ -4,6 +4,8 @@ import { useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom'
 import "../Utils/ShopStructure.css"
 import { useState } from 'react'
+import Navbar from '../Components/Navbar/Navbar'
+import { FooterContainer } from './Footer/containers/footer'
 
 const CartPage = () => {
   const CartData=JSON.parse(localStorage.getItem("CartDatas")) 
@@ -21,6 +23,7 @@ const CartPage = () => {
 
   return (
     <Box>
+      <Navbar/>
       <TableContainer mt={{base:20,sm:20,md:28,lg:32}}>
         <Table 
         variant="simple"
@@ -63,7 +66,7 @@ const CartPage = () => {
         <Button mb="50px" mt='10px'>Checkout</Button>
         </Link>
       </Container>
-      
+      <FooterContainer/>
     </Box>
   )
 }
