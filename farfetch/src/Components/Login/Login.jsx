@@ -27,8 +27,7 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import SignUp from "../Signup/SignUp";
 import { useDispatch, useSelector } from 'react-redux'
 import { LoginAuth } from "../../redux/Auth/action";
-import { onAuthStateChanged, signOut, } from "firebase/auth";
-import {auth} from "../../firebase-config"
+import {Logout} from "../../firebase-config"
 import { useEffect ,useState} from "react";
 
 
@@ -39,40 +38,25 @@ const Login = () => {
   const [pass,setPass]=useState("");
   const [userIcon,setuserIcon]=useState(true);
   const dispatch=useDispatch()
-  const mssg= useSelector((state)=>state.Auth.isLMError)
-  const isError=useSelector((state)=>state.Auth.isLError)
   const success=useSelector((state)=>state.Auth.sucess)
+  const loginData=useSelector((state)=>state.Auth.Login)
   const [isAuth,setIsAuth]=useState(success)
 
-  
-
-
+console.log(loginData)
 
   const handleClick = () => setShow(!show);
 
     useEffect(()=>{
-      if(isError){
-        alert(mssg)
-      }
 
       if(success){
-        alert("Login Sucessfull!")
         setuserIcon(false)
+        setIsAuth(true)
       }
+ 
+    },[success])
 
-      setIsAuth(success)
-
-    },[isError,success])
 
     
-
-
-    // useEffect(()=>{
-    //     onAuthStateChanged(auth,(currentUser)=>{
-    //         setAuthentication(true)
-    //         setuserIcon(false)
-    //     })
-    // },[])
 
 
     const register=()=>{
@@ -82,9 +66,13 @@ const Login = () => {
     }
 
     const handleLogOut= async ()=>{
-        await signOut(auth)
+      try{
+        Logout()
+      }catch(err){
+        console.log(err)
+      }
+      setIsAuth(false)
         setuserIcon(true)
-        setIsAuth(false)
     }
 
   return (

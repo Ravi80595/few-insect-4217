@@ -9,7 +9,7 @@ const HomeInput = () => {
   
   return (
     <>
-    <Box  boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" p="15px" w='40%' m='auto' >
+    <Box boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" p="15px"  w='40%' m='auto' >
         <Box align ='center'>
     <Text fontSize='4xl'fontWeight='bold'lineHeight='1'>GET 10% OFF YOUR <br/> FIRST ORDER</Text><br/>
     <Text>Sign up for promotions, tailored new arrivals, stock <br/> updates  and more - straight to your inbox</Text><br/>

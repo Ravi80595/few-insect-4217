@@ -1,14 +1,19 @@
-import React from 'react'
-import { Flex,Box,Heading,Input,Container,FormLabel,Button,Tr,Td,Text,Image } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { Flex,Box,Heading,Input,Container,FormLabel,Button,Tr,Td,Text,Image, useStatStyles } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar'
+import { FooterContainer } from './Footer/containers/footer'
 
 
 const Payment = () => {
+  const [length,setLength]=useState("")
+
 
     const summary=JSON.parse(localStorage.getItem("CartDatas")) 
     console.log(summary)
   return (
     <Box>
+        <Navbar/>
         <Flex gap='15%'>
             <Box width='50%' boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" m='5' p='5'>  
             <Container>
@@ -19,7 +24,7 @@ const Payment = () => {
                 <Input type="text" m='10px'></Input>
                 </Container> 
                 <Container>
-                <FormLabel>Last Name*</FormLabel>
+                <FormLabel>Last Name</FormLabel>
                 <Input m='10px'></Input>
                 </Container>
             </Flex>  
@@ -44,8 +49,8 @@ const Payment = () => {
                  <FormLabel>Zip Code*</FormLabel>
                 <Input type="text" m='10px'></Input>
             </Container>
-            <Container>
-                <FormLabel>Phone*</FormLabel>
+            <Container> 
+                <FormLabel>Phone</FormLabel>
                 <Input m='10px'></Input>
             </Container>
             </Flex>
@@ -77,7 +82,7 @@ const Payment = () => {
             </Box>
             </Box>
         </Flex>
-      
+      <FooterContainer/>
     </Box>
   )
 }

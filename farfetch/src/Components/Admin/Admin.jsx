@@ -17,6 +17,8 @@ const Admin = () => {
     const [password, setPassword] = useState('')
     const [data,setData]=useState([])
     const [isAuth,setIsAuth]=useState(false)
+    const navigation=useNavigate()
+
     const handleEmail = (e) => setusername(e.target.value)
     const handlePassword = (e) => setPassword(e.target.value)
     const navigate=useNavigate()
@@ -26,7 +28,7 @@ const Admin = () => {
 
 
     const getAdminUsers=()=>{
-        axios.get("http://localhost:8080/admin_users")
+        axios.get("https://data-base-0mrd.onrender.com/admin_users")
         .then((res)=>{
             setData(res.data)
         })
@@ -45,8 +47,8 @@ const handleSubmit=()=>{
         let u = data[i].username;
         let p = data[i].password;
         if (u == username && p == password) {
-            alert("Login Sucessfull!");
-            navigate("/dashboard")
+            alert("Login Sucessfull!")
+            navigation("/dashboard")
           }else{
             alert("Invaild Username or Password");
           }

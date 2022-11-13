@@ -2,6 +2,7 @@ import Navbar from './Components/Navbar/Navbar';
 // import ShopStructure from './Components/ShopStructure';
 import { FooterContainer } from './Pages/Footer/containers/footer';
 import AllRoutes from "./Routes/AllRoutes"
+import PrivateRoute from './Routes/PrivateRoute';
 // import HomePage from './Pages/HomePage';
 // import DataFetch from './Utils/DataFetch';
 // import Admin from './Components/Admin/Admin';
@@ -11,10 +12,9 @@ import AllRoutes from "./Routes/AllRoutes"
 function App() {
   return (
     <div>
-    <Navbar/>
+    {/* <Navbar/> */}
     <AllRoutes/>
-    <FooterContainer/>
-    
+    {/* <FooterContainer/> */}
     </div>
   );
 }

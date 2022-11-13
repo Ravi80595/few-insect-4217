@@ -7,6 +7,8 @@ import "../Utils/ShopStructure.css"
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { addToCart } from '../redux/CartReducer/action'
+import Navbar from './Navbar/Navbar'
+import { FooterContainer } from '../Pages/Footer/containers/footer'
 
 const SingleProductPage = () => {
     const {id}=useParams()
@@ -41,6 +43,8 @@ localStorage.setItem("CartDatas",JSON.stringify(data))
 
 
   return (
+    <Box>
+      <Navbar/>
     <BoxWrapper>
         <div className='SinglePageFlex'>
             <ImageWrapper>
@@ -66,6 +70,8 @@ localStorage.setItem("CartDatas",JSON.stringify(data))
             </Box>
         </div>
         </BoxWrapper>
+        <FooterContainer/>
+        </Box>
   )
 }
 

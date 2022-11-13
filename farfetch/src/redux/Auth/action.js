@@ -11,12 +11,14 @@ import * as types from "./actionType"
                 type:types.GET_SIGNUP_SUCCESS,
                 payload:user
             }))
+            alert("Account Created Successfully")
         }
         catch(err){
             dispatch(({
                 type:types.GET_SIGNUP_FAILURE,
                 payload:err.message
             }))
+            alert(err.message)
         }
       }
 
@@ -28,12 +30,14 @@ import * as types from "./actionType"
                 type:types.GET_LOGIN_SUCCESS,
                 payload:user
             }))
+            alert("Login Sucessfull!")
         }
         catch(err){
             dispatch(({
                 type:types.GET_LOGIN_FAILURE,
                 payload:err.message
             }))
+            alert(err.message)
         }
       }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Flex,Box,Text,Image,Icon } from '@chakra-ui/react'
+// import Navbar from '../Components/Navbar/Navbar'
 
 const Boutiques = () => {
 
@@ -48,6 +49,7 @@ const Boutiques = () => {
 
   return (
     <>
+    {/* <Navbar/> */}
     <Flex  gap='16px'direction={['column','column','row']}>
     {Brands.map(({id,img,text1,text2,text3,price})=>(
          <Box key={id}  >

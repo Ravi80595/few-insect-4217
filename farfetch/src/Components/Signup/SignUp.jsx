@@ -23,23 +23,8 @@ const SignUp = () => {
     const [pass,setPass]=useState("");
     const [name,setName]=useState("");
     const dispatch=useDispatch()
-    const mssg = useSelector((state)=>state.Auth.isSMError)
-    const isError = useSelector((state)=>state.Auth.isSError)
-    const failure = useSelector((state)=>state.Auth.failure)
 
 
-
-    useEffect(()=>{
-
-        if(isError){
-          alert(mssg)
-        }
-  
-        if(failure){
-          alert("Account Created Successfully")
-        }
-  
-      },[isError,failure])
 
       
     const register=()=>{

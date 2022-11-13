@@ -24,15 +24,6 @@ const FilterBox = (props) => {
             setHeight(false)
         }
     }
-
-
-    // if(check){
-    //   dispatch(getShoes())
-    // }
-    // else{
-    //   dispatch(getData())
-    // }
-    
       
     const handlefilter=(e)=>{
         const option=e.target.value
