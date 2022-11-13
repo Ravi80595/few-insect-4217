@@ -1,7 +1,6 @@
 {
   "products": [
     {
-
       "id": "3256804099327982",
       "productName": "Wmstar Plus Size Only Skirts Women's Clothing Denim Maxi With Mesh Patchwork Sexy Medium Stretch Wholesale Dropshipping 2022",
       "image": "https://ae01.alicdn.com/kf/Scb1266dd80c347268e6e0c76fd349f5aA.jpg",
@@ -10,7 +9,7 @@
       "type": "skirts",
       "price": 1263,
       "brandName": "natural",
-      "quantity": 43,
+      "quantity": 20,
       "status": false
     },
     {
@@ -58,7 +57,7 @@
       "type": "skirts",
       "price": 1368,
       "brandName": "natural",
-      "quantity": 50,
+      "quantity": 49,
       "status": true
     },
     {
@@ -158,8 +157,6 @@
       "status": true
     },
     {
-
-
       "id": "2251832762473266",
       "productName": "Men Casual Shoes Lac-up Men Shoes Lightweight Comfortable Breathable Walking Sneakers Tenis masculino Zapatillas Hombre",
       "image": "https://ae04.alicdn.com/kf/H4ff3b9d2e1ae4fcd98cf3e74dbca1db1o.jpg",
@@ -818,12 +815,243 @@
       "brandName": "natural",
       "quantity": 50,
       "status": true
+    },
+    {
+      "productName": "Nike",
+      "category": "shoe",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2e0b7581-aad0-4548-b2be-f504536dda28/air-jordan-xxxvi-low-basketball-shoes-WWGCpF.png",
+      "price": 250,
+      "quantity": 10,
+      "brand": "erv",
+      "status": true,
+      "id": "51cJeeN"
+    },
+    {
+      "productName": "Air jordan",
+      "category": "shoe",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5dec1e66-a5e2-4d25-80d4-44cfd5f88e8d/air-jordan-8-retro-womens-shoes-bfG9d2.png",
+      "price": "133",
+      "quantity": "18",
+      "brand": "nike",
+      "status": true,
+      "id": "hPYpTRc"
     }
   ],
   "admin_users": [
     {
       "username": "admin",
       "password": "admin"
+    }
+  ],
+  "menData": [
+    {
+      "id": "154651646",
+      "image": "https://images.bewakoof.com/t1080/snazzy-green-half-sleeve-t-shirt-for-men-s-436115-1655836690-1.jpg",
+      "productName": "Blue T-shirt",
+      "price": 1299,
+      "quantity": "15",
+      "status": true
+    },
+    {
+      "id": "54154651",
+      "image": "https://images.bewakoof.com/t1080/donald-duck-dl-half-sleeves-aop-t-shirt-303743-1655834278-1.jpg",
+      "productName": "Donald Duck (DL) Half Sleeves AOP T-Shirt",
+      "price": 899,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "3124034",
+      "image": "https://images.bewakoof.com/t1080/men-s-black-beauty-color-block-polo-t-shirt-492878-1659078759-1.jpg",
+      "productName": "Men's Black & Red Color Block Polo T-shirt   ",
+      "price": 12000,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "4418940",
+      "image": "https://images.bewakoof.com/t1080/snitch-men-s-white-abstract-printed-slim-fit-shirt-505598-1656179088-1.jpg",
+      "productName": " Full Sleeve T-shirt",
+      "price": 1299,
+      "quantity": 12,
+      "status": true
+    },
+    {
+      "id": "52105652",
+      "image": "https://images.bewakoof.com/t1080/men-s-red-abstract-printed-slim-fit-shirt-534486-1659955140-1.jpg",
+      "productName": "Men's Red Abstract Printed Slim Fit Shirt",
+      "price": 799,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "6141541",
+      "image": "https://images.bewakoof.com/t1080/men-s-white-abstract-printed-slim-fit-shirt-534387-1659708213-1.jpg",
+      "productName": "Black Half Sleeve T-shirt",
+      "price": 899,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "72456510",
+      "image": "https://images.bewakoof.com/t1080/bubble-gum-stripe-t-shirt-368741-1655750446-1.jpg",
+      "productName": "Bubble Gum Stripe T-Shirt",
+      "price": 1299,
+      "quantity": 11,
+      "status": true
+    },
+    {
+      "id": "124866487451321654",
+      "image": "https://images.bewakoof.com/t1080/toffe-half-sleeve-t-shirt-394625-1655814387-1.jpg",
+      "productName": "Toffe Half Sleeve T-shirt",
+      "price": 699,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "9147891",
+      "image": "https://images.bewakoof.com/t1080/black-irismen-color-block-t-shirt-464958-1658500482-1.jpg",
+      "productName": "Men's Blue & Pink Color Block T-shirt    ",
+      "price": 399,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "1087491",
+      "image": "https://images.bewakoof.com/t1080/men-s-blue-t-shirt-1092-1659608118-1.jpg",
+      "rprice": 499,
+      "productName": " Full Sleeve T-shirt",
+      "price": 1299,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "11074451",
+      "image": "https://images.bewakoof.com/t1080/men-s-red-striped-oversized-t-shirt-425013-1655751638-2.jpg",
+      "productName": "Toffe Half Sleeve T-shirt",
+      "rprice": 299,
+      "price": 699,
+      "quantity": 1,
+      "status": true
+    },
+    {
+      "id": "127888954",
+      "image": "https://images.bewakoof.com/t1080/men-s-black-anime-back-printed-oversized-t-shirt-468376-1655751023-1.jpg",
+      "productName": "Black Half Sleeve T-shirt",
+      "rprice": 399,
+      "price": 899,
+      "quantity": 1,
+      "status": true
+    }
+  ],
+  "womenData": [
+    {
+      "id": "546546549875",
+      "image": "https://images.bewakoof.com/t1080/women-s-black-friends-typography-boyfriend-t-shirt-234669-1655810540-1.jpg",
+      "productName": "Naaz's Black Friends Typography T-shirt",
+      "rprice": 699,
+      "price": 1299,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "5465465164987461",
+      "image": "https://images.bewakoof.com/t1080/women-s-red-boyfriend-t-shirt-170465-1658918677-1.jpg",
+      "productName": "Women's Red Boyfriend T-shirt",
+      "rprice": 699,
+      "price": 14000,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "15001100",
+      "image": "https://images.bewakoof.com/t1080/women-s-white-boyfriend-t-shirt-119167-1658407355-1.jpg",
+      "productName": "Women's White Boyfriend T-shirt   ",
+      "rprice": 399,
+      "price": 999,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "1111116",
+      "image": "https://images.bewakoof.com/t1080/climbing-pocket-panda-boyfriend-t-shirt-231686-1655748601-1.jpg",
+      "rprice": 499,
+      "productName": "Climbing Pocket Panda Boyfriend T-Shirt      ",
+      "price": 1299,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "17146545",
+      "image": "https://images.bewakoof.com/t1080/women-s-varsity-green-tie-dye-oversized-t-shirt-512610-1658407432-1.jpg",
+      "productName": " BTS Logo Typography Oversized Fit T-shirt",
+      "rprice": 799,
+      "price": 1299,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "999918",
+      "image": "https://images.bewakoof.com/t1080/women-s-yellow-bts-logo-typography-oversized-fit-t-shirt-468421-1658407143-4.jpg",
+      "productName": "Women's Yellow BTS Logo Typography Oversized Fit T-shirt",
+      "rprice": 444,
+      "price": 899,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "1999997777",
+      "image": "https://images.bewakoof.com/t1080/aks-green-solid-flared-anarkali-with-tussel-details-404759-1656161846-1.jpg",
+      "productName": "Naaz's  Green Solid Flared Anarkali With Tussel Details",
+      "rprice": 800,
+      "price": 1200,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "202222444",
+      "image": "https://images.bewakoof.com/t1080/aks-green-floral-printed-flared-anarkali-404758-1655937808-1.jpg",
+      "productName": "Naaz's Green Floral Printed Flared Anarkali ",
+      "rprice": 786,
+      "price": 999,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "00002224545421",
+      "image": "https://images.bewakoof.com/t1080/aks-black-gold-printed-tiered-anarkali-404969-1655938050-1.jpg",
+      "productName": "Naaz's Black Gold Printed Tiered Anarkali",
+      "rprice": 1600,
+      "price": 3999,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "225564984",
+      "image": "https://images.bewakoof.com/t1080/women-s-maroon-ethnic-motif-printed-crop-top-511556-1655801504-1.JPG",
+      "productName": "Women's Maroon Ethnic Motif Printed Crop Top",
+      "rprice": 375,
+      "price": 699,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "11002225523",
+      "image": "https://images.bewakoof.com/t1080/women-s-olive-ethnic-motif-printed-dress-511979-1655800632-1.jpg",
+      "productName": "Women's Olive Ethnic Motif Printed Dress      ",
+      "rprice": 786,
+      "price": 999,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": "241534461",
+      "image": "https://images.bewakoof.com/t1080/women-s-red-ethnic-motif-printed-peplum-top-512009-1655800744-1.JPG",
+      "productName": "Women's Red Ethnic Motif Printed Peplum Top  ",
+      "rprice": 399,
+      "price": 899,
+      "quantity": 14,
+      "status": true
     }
   ]
 }

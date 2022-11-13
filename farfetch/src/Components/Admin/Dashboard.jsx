@@ -21,6 +21,19 @@ import {Box,
 import axios from 'axios';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
+
+const initData={
+  productName:"",
+  category:"",
+  image:"",
+  price:"",
+  quantity:"",
+  brand:"",
+  status:true,
+}
+
+
+
 const Dashboard = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [data,setData]=useState([])
@@ -28,14 +41,19 @@ const Dashboard = () => {
     const [searchParams,setSearchParams]=useSearchParams()
     const [sort,setSort]=useState("")
     const [activeSort,setActiveSort]=useState("")
+    const [formData,setFormData]=useState(initData)
 
    
 
 
-
+console.log(formData)
     
 
     //.................... Fetch request.....................//
+
+    const handleAll=()=>{
+      fetchData()
+    }
 
 
 
@@ -56,7 +74,6 @@ const Dashboard = () => {
 
     const handleEditQ=(id)=>{
      let newQty=prompt("Enter New Quantity")
-     console.log(newQty)
      if (newQty !== 0 || newQty !== null || newQty>1){
        axios.patch(`http://localhost:8080/products/${id}`,{quantity :+newQty})
        .then((res)=>{
@@ -166,11 +183,65 @@ const Dashboard = () => {
       axios.get(`http://localhost:8080/products?_sort=status&_order=${activeSort}`)
       .then((res)=>{
         setData(res.data)
-        console.log(res.data)
       }) 
       .catch((err)=>{
         console.log(err)
       })
+    }
+
+     //.................... SortBy status request.....................//
+
+     const handleMensData=()=>{
+      mensData()
+     }
+
+    const mensData=()=>{
+      setLoading(true)
+      axios.get("http://localhost:8080/menData")
+      .then((res)=>{
+          setData(res.data)
+          setLoading(false)
+      })
+      .catch((err)=>{
+          console.log(err)
+      })
+    }
+
+    //.................... SortBy status request.....................//
+
+    const handleWomensData=()=>{
+      womensData()
+    }
+
+    const womensData=()=>{
+      setLoading(true)
+      axios.get("http://localhost:8080/womenData")
+      .then((res)=>{
+          setData(res.data)
+          setLoading(false)
+      })
+      .catch((err)=>{
+          console.log(err)
+      })
+    }
+
+    //....................  Add Product request.....................//
+
+    const handleChange=(e)=>{
+      const {name,value}=e.target;
+      setFormData({...formData,[name]:value})
+    }
+
+    const handlePost=()=>{
+      axios.post("http://localhost:8080/products",formData)
+    .then((res)=>{
+        fetchData()
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+
+    setFormData(initData)
     }
 
 
@@ -226,18 +297,18 @@ const Dashboard = () => {
                     <ModalBody >
                         <Flex direction="column" gap="10px" mt="50px">
                         <label>Product Name</label>
-                        <Input type="text" placeholder="Add Product Name" />
+                        <Input type="text" placeholder="Add Product Name" name="productName" value={formData.productName} onChange={handleChange} />
                         <label>URL</label>
-                        <Input type="url" placeholder="Add Image URL" />
+                        <Input type="url" placeholder="Add Image URL" name="image" value={formData.image}  onChange={handleChange} />
                         <label>Product Price</label>
-                        <Input type="number" placeholder="Add Product Price" />
+                        <Input type="text" placeholder="Add Product Price" name="price" value={formData.price} onChange={handleChange}/>
                         <label>Brand Name</label>
-                        <Input type="text"  placeholder="Add Brand Name"/>
+                        <Input type="text"  placeholder="Add Brand Name" name="brand" value={formData.brand} onChange={handleChange}/>
                         <label>Quantity</label>
-                        <Input type="number" placeholder="Add Quantity" />
+                        <Input type="number" placeholder="Add Quantity"  name='quantity' value={formData.quantity} onChange={handleChange}/>
                         <label>Description</label>
-                        <Input mb="20px" type="text" placeholder="Add Description" />
-                        <Button mb="25px" color="white" bg="black" _hover={{bg:"grey"}} >Add</Button>
+                        <Input mb="20px" type="text" placeholder="Add Description" name="category" value={formData.category} onChange={handleChange}/>
+                        <Button onClick={handlePost} mb="25px" color="white" bg="black" _hover={{bg:"grey"}} >Add</Button>
                         </Flex> 
                     </ModalBody>
                     </ModalContent>
@@ -247,9 +318,9 @@ const Dashboard = () => {
 
             <div className="action_div">
               <div>
-                <Button bg="white" border="1px solid grey" mr="10px"  >Mens</Button>
-                <Button bg="white" border="1px solid grey" mr="10px"  >Women</Button>
-                <Button bg="white" border="1px solid grey" >Kids</Button>
+                <Button onClick={handleAll} bg="white" border="1px solid grey" mr="10px" >All</Button>
+                <Button onClick={handleMensData} bg="white" border="1px solid grey" mr="10px"  >Mens</Button>
+                <Button onClick={handleWomensData} bg="white" border="1px solid grey"   >Women</Button>
               </div>
 
               <Flex gap="10px">
