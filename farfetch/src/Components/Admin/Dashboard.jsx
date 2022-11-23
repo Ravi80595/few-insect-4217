@@ -19,7 +19,8 @@ import {Box,
         Spinner 
     } from '@chakra-ui/react';
 import axios from 'axios';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link,useSearchParams } from 'react-router-dom';
+
 
 
 const initData={
@@ -46,8 +47,6 @@ const Dashboard = () => {
    
 
 
-console.log(formData)
-    
 
     //.................... Fetch request.....................//
 
@@ -57,7 +56,7 @@ console.log(formData)
 
     const fetchData=()=>{
       setLoading(true)
-        axios.get("http://localhost:8080/products")
+        axios.get("https://data-base-0mrd.onrender.com/products")
         .then((res)=>{
             setData(res.data)
             setLoading(false)
@@ -73,7 +72,7 @@ console.log(formData)
     const handleEditQ=(id)=>{
      let newQty=prompt("Enter New Quantity")
      if (newQty !== 0 || newQty !== null || newQty>1){
-       axios.patch(`http://localhost:8080/products/${id}`,{quantity :+newQty})
+       axios.patch(`https://data-base-0mrd.onrender.com/products/${id}`,{quantity :+newQty})
        .then((res)=>{
         fetchData()
         alert("Inventory Updated");
@@ -85,7 +84,7 @@ console.log(formData)
     }
 
     const handleReduce=(id,qty)=>{
-      axios.patch(`http://localhost:8080/products/${id}`,{quantity :qty-1})
+      axios.patch(`https://data-base-0mrd.onrender.com/products/${id}`,{quantity :qty-1})
       .then((res)=>{
         fetchData()
       })
@@ -95,7 +94,7 @@ console.log(formData)
     }
 
     const handleIncrease=(id,qty)=>{
-      axios.patch(`http://localhost:8080/products/${id}`,{quantity :qty+1})
+      axios.patch(`https://data-base-0mrd.onrender.com/products/${id}`,{quantity :qty+1})
       .then((res)=>{
         fetchData()
       })
@@ -111,7 +110,7 @@ console.log(formData)
 
       let newPricec=prompt("Enter New Quantity")
       if (newPricec === 0) return;
-      axios.patch(`http://localhost:8080/products/${id}`,{price :+newPricec})
+      axios.patch(`https://data-base-0mrd.onrender.com/products/${id}`,{price :+newPricec})
       .then((res)=>{
        fetchData()
        alert("Inventory Updated");
@@ -127,7 +126,7 @@ console.log(formData)
 
 
      const handleActive=(id,status)=>{
-      axios.patch(`http://localhost:8080/products/${id}`,{status:!status})
+      axios.patch(`https://data-base-0mrd.onrender.com/products/${id}`,{status:!status})
       .then((res)=>{
         fetchData()
       })
@@ -143,7 +142,7 @@ console.log(formData)
     //.................... Delete request.....................//
 
     const handleDelete=(id)=>{
-      axios.delete(`http://localhost:8080/products/${id}`)
+      axios.delete(`https://data-base-0mrd.onrender.com/products/${id}`)
       .then((res)=>{
         fetchData()
       })
@@ -163,7 +162,7 @@ console.log(formData)
     const handleSort=(e)=>{
       setSort(e.target.value)
 
-      axios.get(`http://localhost:8080/products?_sort=price&_order=${sort}`)
+      axios.get(`https://data-base-0mrd.onrender.com/products?_sort=price&_order=${sort}`)
       .then((res)=>{
         setData(res.data)
       }) 
@@ -178,7 +177,7 @@ console.log(formData)
     const handleActiveSort=(e)=>{
       setActiveSort(e.target.value)
 
-      axios.get(`http://localhost:8080/products?_sort=status&_order=${activeSort}`)
+      axios.get(`https://data-base-0mrd.onrender.com/products?_sort=status&_order=${activeSort}`)
       .then((res)=>{
         setData(res.data)
       }) 
@@ -187,7 +186,7 @@ console.log(formData)
       })
     }
 
-     //.................... SortBy status request.....................//
+     //.................... SortBy men Data.....................//
 
      const handleMensData=()=>{
       mensData()
@@ -195,7 +194,7 @@ console.log(formData)
 
     const mensData=()=>{
       setLoading(true)
-      axios.get("http://localhost:8080/menData")
+      axios.get("https://data-base-0mrd.onrender.com/menData")
       .then((res)=>{
           setData(res.data)
           setLoading(false)
@@ -205,7 +204,7 @@ console.log(formData)
       })
     }
 
-    //.................... SortBy status request.....................//
+    //.................... SortBy Womens Data.....................//
 
     const handleWomensData=()=>{
       womensData()
@@ -213,7 +212,7 @@ console.log(formData)
 
     const womensData=()=>{
       setLoading(true)
-      axios.get("http://localhost:8080/womenData")
+      axios.get("https://data-base-0mrd.onrender.com/womenData")
       .then((res)=>{
           setData(res.data)
           setLoading(false)
@@ -231,7 +230,7 @@ console.log(formData)
     }
 
     const handlePost=()=>{
-      axios.post("http://localhost:8080/products",formData)
+      axios.post("https://data-base-0mrd.onrender.com/products",formData)
     .then((res)=>{
         fetchData()
     })
@@ -396,4 +395,4 @@ console.log(formData)
   )
 }
 
-export default Dashboard
+export default Dashboard;

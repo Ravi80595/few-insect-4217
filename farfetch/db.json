@@ -7,7 +7,7 @@
       "rating": 5,
       "reviews": 3,
       "type": "skirts",
-      "price": 513,
+      "price": 152,
       "brandName": "natural",
       "quantity": 50,
       "status": true
@@ -22,7 +22,7 @@
       "price": 210,
       "brandName": "natural",
       "quantity": 50,
-      "status": true
+      "status": false
     },
     {
       "id": "3256803405772537",
@@ -46,7 +46,7 @@
       "price": 455,
       "brandName": "natural",
       "quantity": 50,
-      "status": true
+      "status": false
     },
     {
       "id": "3256803555072257",
@@ -70,7 +70,7 @@
       "type": "shoes",
       "brandName": "natural",
       "quantity": 50,
-      "status": true
+      "status": false
     },
     {
       "id": "3256801343088646",
@@ -82,7 +82,7 @@
       "price": 255,
       "brandName": "natural",
       "quantity": 50,
-      "status": true
+      "status": false
     },
     {
       "id": "3256804467771983",
@@ -659,14 +659,14 @@
       "id": "51cJeeN"
     },
     {
-      "productName": "Air jordan",
+      "productName": "nike",
       "category": "shoe",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5dec1e66-a5e2-4d25-80d4-44cfd5f88e8d/air-jordan-8-retro-womens-shoes-bfG9d2.png",
-      "price": "133",
-      "quantity": "18",
-      "brand": "nike",
+      "price": "199",
+      "quantity": "10",
+      "brand": "nile",
       "status": true,
-      "id": "hPYpTRc"
+      "id": "ZQmrs6v"
     }
   ],
   "admin_users": [

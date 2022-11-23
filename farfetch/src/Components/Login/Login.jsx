@@ -42,7 +42,6 @@ const Login = () => {
   const loginData=useSelector((state)=>state.Auth.Login)
   const [isAuth,setIsAuth]=useState(success)
 
-console.log(loginData)
 
   const handleClick = () => setShow(!show);
 
