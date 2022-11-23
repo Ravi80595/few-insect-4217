@@ -47,8 +47,6 @@ const Dashboard = () => {
    
 
 
-console.log(formData)
-    
 
     //.................... Fetch request.....................//
 
