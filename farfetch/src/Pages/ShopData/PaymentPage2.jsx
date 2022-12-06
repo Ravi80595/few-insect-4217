@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Flex,Box,Heading,Input,FormLabel,Text,Image,Tr,Td,Center,Button,AlertDialog,AlertDialogOverlay,AlertDialogContent,AlertDialogHeader,AlertDialogBody,AlertDialogFooter,Container } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
-import Navbar from '../Components/Navbar/Navbar'
+import Navbar from '../../Components/Navbar/Navbar'
 // import { Link } from 'react-router-dom'
 
 const PaymentPage2 = () => {

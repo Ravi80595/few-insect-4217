@@ -2,10 +2,10 @@ import React from 'react'
 import {Box,TableContainer,Table,Thead,Tr,Th,Tbody,Td,Tfoot,Button,Container} from '@chakra-ui/react'
 import { useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom'
-import "../Utils/ShopStructure.css"
+import "../../Utils/ShopStructure.css"
 import { useState } from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import { FooterContainer } from './Footer/containers/footer'
+import Navbar from '../../Components/Navbar/Navbar'
+import { FooterContainer } from '../Footer/containers/footer'
 
 const CartPage = () => {
   const CartData=JSON.parse(localStorage.getItem("CartDatas")) 

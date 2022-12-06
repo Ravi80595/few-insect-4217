@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Flex,Box,Heading,Input,Container,FormLabel,Button,Tr,Td,Text,Image, useStatStyles } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import Navbar from '../Components/Navbar/Navbar'
-import { FooterContainer } from './Footer/containers/footer'
+import Navbar from '../../Components/Navbar/Navbar'
+import { FooterContainer } from '../Footer/containers/footer'
 
 
 const Payment = () => {

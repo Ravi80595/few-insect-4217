@@ -1,6 +1,7 @@
 import Navbar from './Components/Navbar/Navbar';
 // import ShopStructure from './Components/ShopStructure';
 import { FooterContainer } from './Pages/Footer/containers/footer';
+import NewHomePage from './Pages/Homepage/NewHomePage';
 import AllRoutes from "./Routes/AllRoutes"
 import PrivateRoute from './Routes/PrivateRoute';
 // import HomePage from './Pages/HomePage';
@@ -14,6 +15,7 @@ function App() {
     <div>
     {/* <Navbar/> */}
     <AllRoutes/>
+    {/* <NewHomePage/> */}
     {/* <FooterContainer/> */}
     </div>
   );
