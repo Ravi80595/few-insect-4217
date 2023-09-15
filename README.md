@@ -1,9 +1,10 @@
 #  CLOFETCH
 This was a collaborative project made by 4 members Executed in 5 days.
 Team lead- Ravi Sharma
-Member-1: Ashutosh Raj
-Member-2: Masum Raja
-Member-3: Sachin Kumar
+Member-1: Akshay Srivastava
+Member-2: Ashutosh Raj
+Member-3: Masum Raja
+Member-4: Sachin Kumar
   Deploy Link -Netlify: https://farfetch-8hthowlmt-masum-raja.vercel.app/
 ---
 ## Tech Stack Used : -
